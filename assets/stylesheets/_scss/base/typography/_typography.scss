@@ -1,0 +1,29 @@
+//
+// base/typography/typography: the default standard typography styles.
+//
+
+h1 {
+    padding: 0.3em;
+    margin: 0;
+    font: font('heading-1');
+    color: color('gold');
+    @include center-allcaps;
+
+    @media all and (min-width: $desktop-width-media) and (min-height: $desktop-height-media) {
+        font-size: $heading-1;
+    }
+}
+
+h2 {
+    margin: 1em auto;
+    font: font('heading-2');
+    letter-spacing: 0.05em;
+    @include center-allcaps;
+}
+
+h3 {
+    margin: 0;
+    font: font('heading-3');
+    letter-spacing: 0.0625em;
+    @include center-allcaps;
+}

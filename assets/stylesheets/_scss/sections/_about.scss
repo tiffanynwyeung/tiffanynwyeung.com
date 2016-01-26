@@ -1,0 +1,24 @@
+//
+// sections/about: specific styling for the about section.
+//
+
+.profile-img {
+    width: 16em;
+    height: 16em;
+    margin: 1em auto;
+    display: block;
+    float: none;
+    border: $primary-border;
+
+    @media all and (min-width: $desktop-width-media) {
+        margin: 1em 2em 1em 0;
+        display: inline-block;
+        float: left;
+    }
+
+    @media all and (min-width: 88.375em) {
+        width: 15em;
+        height: 15em;
+        margin-top: 0;
+    }
+}

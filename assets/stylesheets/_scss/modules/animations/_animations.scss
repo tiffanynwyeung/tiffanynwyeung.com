@@ -1,0 +1,39 @@
+//
+// modules/animations/animations: all animations styles.
+//
+
+@media all and (min-width: $desktop-width-media) {
+
+    .logo--nameplate {
+        @include animation-name(expand-icon);
+    }
+
+    .nameplate__border-container {
+        @include animation-name(expand-borderbox);
+    }
+}
+
+.logo--nameplate, .nameplate__border-container {
+    @include animation-duration(0.8s);
+    @include animation-delay(1.8s);
+    @extend %animation-settings;
+}
+
+.logo--nav {
+    visibility: hidden;
+    opacity: 0;
+}
+
+// ANIMATION TRIGGERS
+
+.activate-animation {
+    @include animation-iteration-count(1);
+    @include animation-play-state(running);
+}
+
+.active {
+    cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+    @include transition($medium-transition);
+}

@@ -1,0 +1,13 @@
+//
+// sections/contact: specific styling for the contact section.
+//
+
+span.genericon {
+    display: inline;
+    vertical-align: middle;
+    font-size: $heading-5;
+
+    @media all and (min-width: $desktop-width-media) {
+        font-size: $heading-2;
+    }
+}
