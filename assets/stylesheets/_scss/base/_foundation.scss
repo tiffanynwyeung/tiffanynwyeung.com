@@ -1,0 +1,60 @@
+//
+// base/foundation: the default CSS styles for standard HTML elements.
+//
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: color('black');
+    font: font('body');
+    color: color('white', 'titanium');
+    text-align: center;
+    word-break: break-word;
+    vertical-align: baseline;
+}
+
+p {
+    margin: 1.5em 0;
+    text-align: left;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+a {
+    color: color('gold', 'amber');
+    text-decoration: none;
+    @include transition($default-transition);
+
+    &:hover, &:active {
+        color: color('gold');
+        @include transition($default-transition);
+    }
+}
+
+input {
+
+    &[type="radio"] {
+        display: none;
+    }
+}
+
+label {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+::selection {
+    background: transparent;
+    color: color('gold', 'topaz');
+}

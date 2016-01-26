@@ -1,0 +1,32 @@
+---
+# global.scss: global stylesheet. compiled via jekyll.
+---
+
+// variable to detect which navigation breakpoint to use
+$stylesheet-type: 'general';
+
+// CORE SETTINGS
+@import 'base/normalize';
+
+@import 'base/colors';
+@import 'base/typography/definitions';
+@import 'base/z-index';
+@import 'base/settings/variables';
+@import 'base/settings/mixins';
+
+// FONTS
+@import 'fonts/work-sans';
+@import 'fonts/genericons';
+
+// BASELINE
+@import 'base/foundation';
+@import 'base/typography/typography';
+
+@import 'base/layouts/default';
+@import 'base/layouts/page';
+
+// MODULES
+@import 'modules/navigation/nav-bar';
+@import 'modules/footer';
+
+@import 'modules/logo';

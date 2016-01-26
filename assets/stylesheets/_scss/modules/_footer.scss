@@ -1,0 +1,36 @@
+//
+// modules/footer: the default footer style.
+//
+
+footer {
+    width: 100%;
+    padding: 2em 0;
+    background: color('black');
+
+    p {
+        text-align: center;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        display: inline;
+        list-style: none;
+    }
+
+    li{
+        margin: 1em;
+        display: inline-block;
+    }
+}
+
+span.genericon {
+    font-size: $heading-5;
+    color: color('white', 'chrome');
+    @include transition($default-transition);
+
+    &:hover, &:active {
+        color: color('white');
+        @include transition($default-transition);
+    }
+}

@@ -1,0 +1,14 @@
+//
+// sections/work: specific styling for the work section.
+//
+
+.live-preview {
+    border: $hidden-border;
+    color: color('gold', 'amber');
+
+    &:hover, &:active {
+        background: color('black', 'obsidian');
+        border: $primary-border;
+        color: color('gold');
+    }
+}

@@ -1,0 +1,23 @@
+#
+# Configuration
+#
+
+gems:
+  - jekyll-sitemap
+
+# site setup
+name: Tiffany Yeung
+description: Freelance web developer and Computer Science student studying at the University of Waterloo.
+tagline: Developer & designer aspiring for expression through code.
+url: http://tiffanynwyeung.co
+baseurl: ""
+
+# assets
+sass:
+  sass_dir: assets/stylesheets/_scss
+  style: :compressed
+
+# outside links
+social_media_username: tiffanynwyeung
+repo: https://github.com/tiffanynwyeung/tiffanynwyeung.github.io
+google_analytics: UA-72274516-1

@@ -1,0 +1,51 @@
+---
+# landing.scss: landing page stylesheet. compiled via jekyll.
+---
+
+// variable to detect which navigation breakpoint to use
+$stylesheet-type: 'landing';
+
+// CORE SETTINGS
+@import 'base/normalize';
+
+@import 'base/colors';
+@import 'base/typography/definitions';
+@import 'base/z-index';
+@import 'base/settings/variables';
+@import 'base/settings/mixins';
+
+// FONTS
+@import 'fonts/work-sans';
+@import 'fonts/genericons';
+
+// BASELINE
+@import 'base/foundation';
+@import 'base/typography/typography';
+
+@import 'base/layouts/default';
+@import 'base/layouts/landing';
+
+// MODULES
+@import 'modules/navigation/nav-bar';
+@import 'modules/navigation/nav-arrows';
+@import 'modules/footer';
+
+@import 'modules/logo';
+@import 'modules/card';
+@import 'modules/carousel';
+@import 'modules/tile';
+
+// ANIMATIONS -- settings placed here set for actualization
+@import 'modules/animations/mixins';
+@import 'modules/animations/extends';
+
+// SECTIONS
+@import 'sections/nameplate';
+@import 'sections/about';
+@import 'sections/work';
+@import 'sections/projects';
+@import 'sections/contact';
+
+// ANIMATIONS -- placed at the very end to ensure animations fully work
+@import 'modules/animations/keyframes';
+@import 'modules/animations/animations';
