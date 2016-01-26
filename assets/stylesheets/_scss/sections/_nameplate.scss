@@ -1,0 +1,113 @@
+//
+// sections/nameplate: specific styling for the nameplate section.
+//
+
+.nameplate {
+    width: 80vw;
+    height: 12.5em;
+    margin: -6.25em auto 0 auto;
+    position: relative;
+    top: 50%;
+
+    &__border-container {
+        width: 8em;
+        height: 7.5em;
+        padding: 0;
+        @include center-relative;
+    }
+
+    &__content {
+        width: 8em;
+        padding: 0;
+        @include center-absolute;
+        top: 0;
+
+        @media all and (min-width: $desktop-width-media) {
+            width: 43.75em;
+        }
+    }
+
+    &__subtitle {
+
+        &--name {
+            display: block;
+
+            @media all and (min-width: $desktop-width-media) {
+                display: none;
+            }
+        }
+
+        &--tagline {
+            display: none;
+
+            @media all and (min-width: $medium-mobile-width) {
+                display: block;
+            }
+        }
+    }
+}
+
+.logo--word:nth-child(even) {
+    display: none;
+
+    @media all and (min-width: $desktop-width-media) {
+        display: inline;
+    }
+}
+
+// BORDER
+
+@if $stylesheet-type == 'landing' {
+
+    .border--title {
+        @extend %border;
+    }
+
+    .tb1, .tb3 {
+        height: 7.5em;
+        @extend %b-odd;
+        animation-name: border-length;
+
+        @media all and (min-width: $desktop-width-media) {
+            @include animation-name(border-length, reverse-border-length);
+
+        }
+    }
+
+    .tb2, .tb4 {
+        width: 8em;
+        @extend %b-even;
+        animation-name: border-width;
+
+        @media all and (min-width: $desktop-width-media) {
+            @include animation-name(border-width, reverse-border-width);
+        }
+    }
+
+    .tb1 {
+        bottom: 0;
+        left: 0;
+        @include animation-delay(0s, 3.3s);
+    }
+
+    .tb2 {
+        top: 0;
+        left: 0;
+        @include animation-delay(0.4s, 2.9s);
+    }
+
+    .tb3 {
+        top: 0;
+        right: 0;
+        @include animation-delay(0.8s, 2.5s);
+    }
+
+    .tb4 {
+        bottom: 0;
+        right: 0;
+        @include animation-delay(1.2s, 2.1s);
+    }
+
+} @else {
+    $result: null;
+}

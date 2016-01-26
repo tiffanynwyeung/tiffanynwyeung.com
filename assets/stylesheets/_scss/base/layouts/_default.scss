@@ -1,0 +1,23 @@
+//
+// base/layouts/default: default site layout.
+//
+
+header, main {
+    width: 100%;
+    padding: 0;
+    @include center-absolute;
+    top: 0;
+    text-align: center;
+}
+
+.content {
+    width: auto;
+    height: auto;
+    padding: 6em 1.5em;
+    margin: 0 auto;
+
+    h1 {
+        font-size: $heading-2;
+        margin-bottom: 0.4em;
+    }
+}
