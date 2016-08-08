@@ -1,60 +1,58 @@
-//
-// base/foundation: the default CSS styles for standard HTML elements.
-//
+/// =====
+/// base/foundation
+/// default styles for standard HTML elements.
+/// =====
+
+html {
+  font-family: $default-font;
+}
 
 html, body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border: 0;
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background: color('black');
-    font: font('body');
-    color: color('white', 'titanium');
-    text-align: center;
-    word-break: break-word;
-    vertical-align: baseline;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: color('sky', 'lighter');
+  border: 0;
+  font: $light #{$default-font-size}/#{$body-lh} $body-font;
+  color: color('black');
+  word-break: break-word;
+  vertical-align: baseline;
 }
 
 p {
-    margin: 1.5em 0;
-    text-align: left;
+  margin: 1.5em 0;
+  font-size: $default-font-size;
+  line-height: $body-lh;
+
+  @media all and (min-width: $tablet-size) {
+    font-size: $md-font-size;
+  }
+
+  @media all and (min-width: $sm-desktop-width) {
+    font-size: $lg-font-size;
+  }
 }
 
 ul {
-    padding: 0;
-    margin: 0;
-    display: block;
+  display: block;
 }
 
 a {
-    color: color('gold', 'amber');
-    text-decoration: none;
-    @include transition($default-transition);
+  font-weight: $regular;
+  color: color('gold', 'dark');
+  text-decoration: none;
+  transition: $default-transition;
 
-    &:hover, &:active {
-        color: color('gold');
-        @include transition($default-transition);
-    }
-}
-
-input {
-
-    &[type="radio"] {
-        display: none;
-    }
-}
-
-label {
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
+  &:hover,
+  &:focus,
+  &:active {
+    color: color('gold', 'darker');
+    transition: $default-transition;
+  }
 }
 
 ::selection {
-    background: transparent;
-    color: color('gold', 'topaz');
+  background: color('blue');
+  color: color('sky', 'lighter');
 }

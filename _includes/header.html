@@ -1,0 +1,47 @@
+<header>
+  {% if page.type == 'landing' %}
+    <section class="nameplate">
+      <div class="nameplate__content">
+        <div class="nameplate__title">{% include logo.html %}</div>
+        <div class="nameplate__subtitle">
+          {% assign words = site.tagline | split: ' ' %}
+          {% for word in words %}
+            <span class="subtitle subtitle--word{{ forloop.index }}">{{ word }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% else %}
+    <nav class="nav">
+      <ul>
+        <li class="nav__item nav__item--left">
+          {% if page.previous %}
+            <a class="nav__link" href="/work/{{ page.previous }}" title="{{ page.previous-title }}">
+              <span class="genericon genericon-previous icon--nav" aria-hidden="true"></span>
+              <span>{{ page.previous-title }}</span>
+            </a>
+          {% endif %}
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/" rel="index">Back to Index</a>
+        </li>
+        <li class="nav__item nav__item--right">
+          {% if page.next %}
+            <a class="nav__link" href="/work/{{ page.next }}" title="{{ page.next-title }}">
+              <span>{{ page.next-title }}</span>
+              <span class="genericon genericon-next icon--nav" aria-hidden="true"></span>
+            </a>
+          {% endif %}
+        </li>
+      </ul>
+    </nav>
+    <h1 class="page__title {% if page.type == 'error' %}page__title--error{% endif %}">
+      {% if page.type == 'error' %}
+        {{ page.heading }}
+      {% else %}
+        {{ page.title }}
+      {% endif %}
+    </h1>
+    <h2 class="page__subtitle">{{ page.description }}</h2>
+  {% endif %}
+</header>

@@ -1,24 +1,18 @@
+---
+layout: compress
+---
+
 <!doctype html>
 
-<html>
-    {% include head.html %}
-    <body>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <main>
+      {{ content }}
+    </main>
+    {% include footer.html %}
     {% include scripts.html %}
-    <nav>
-        {% if page.title == "Index" %}
-        <ul>
-            <li><a href="#about">about</a></li>
-            <li><a href="#work">work</a></li>
-            <li id="nav-icon"><h1 class="logo--nav">TY</h1></li>
-            <li><a href="#projects">projects</a></li>
-            <li><a href="#contact">contact</a></li>
-        </ul>
-        {% else %}
-        <a href="/" id="mobile-index-redirect">back to site</a>
-        <a href="/" id="nav-icon"><h1 class="logo--nav">TY</h1></a>
-        {% endif %}
-    </nav>
-    {{ content }}
     {% include analytics.html %}
-    </body>
+  </body>
 </html>

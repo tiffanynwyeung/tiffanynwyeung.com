@@ -1,42 +1,50 @@
-//
-// base/colors: the default site color palette.
-//
+/// =====
+/// base/colors
+/// default site color palette.
+/// =====
 
-// VARIABLES
-$color-variant: 'base' !default;
+$color-palette-data: (
+  'gold': (
+    'lighter': hsl(33, 100%, 78%),
+    'light': hsl(32, 73%, 63%),
+    'base': hsl(32, 59%, 56%),
+    'dark': hsl(32, 56%, 53%),
+    'darker': hsl(27, 62%, 36%),
+  ),
 
-$color-palette: (
-    'gold': (
-        'base': #d1944c,
-        'amber': #f5b96d,
-        'topaz': #e7c28d
-    ),
-    'black': (
-        'base': #070b15,
-        'onyx': #13161d,
-        'obsidian': #20242f,
-        'charcoal': #23252b,
-        'slate': #33353c,
-    ),
-    'white': (
-        'base': rgba(255,255,255,1),
-        'titanium': rgba(255,255,255,0.75),
-        'chrome': rgba(255,255,255,0.625),
-        'silver': rgba(255,255,255,0.5),
-    )
+  'blue': (
+    'lighter': hsl(225, 15%, 35%),
+    'light': hsl(227, 15%, 23%),
+    'base': hsl(226, 23%, 20%),
+    'dark': hsl(225, 28%, 15%),
+    'darker': hsl(223, 30%, 12%),
+  ),
+
+  'sky': (
+    'lighter': rgba(255, 255, 255, 0.9375),
+    'light': rgba(255, 255, 255, 0.875),
+    'base': rgba(255, 255, 255, 0.75),
+    'dark': hsl(222, 7%, 73%),
+  ),
+
+  'black': (
+    'base': rgba(0,0,0,0.8),
+  ),
+
+  'white': (
+    'base': rgba(255,255,255,1),
+  )
 );
 
-// FUNCTIONS
-@function color($name, $variant: $color-variant) {
 
-    $color-spectrum: if(map-has-key($color-palette, $name), map-get($color-palette, $name), null);
+@function color($hue, $variant: base) {
+  $color-spectrum: if(map-has-key($color-palette-data, $hue), map-get($color-palette-data, $hue), null);
 
-    @if $color-spectrum {
-        @if map-has-key($color-spectrum, $variant) {
-            @return map-get($color-spectrum, $variant);
-        }
+  @if $color-spectrum {
+    @if map-has-key($color-spectrum, $variant) {
+      @return map-get($color-spectrum, $variant);
     }
+  }
 
-    @warn "Unknown `#{$name}/#{$variant}` in the color palette.";
-    @return null;
+  @error "Unknown `#{$name}/#{$variant}` in the color palette.";
 }

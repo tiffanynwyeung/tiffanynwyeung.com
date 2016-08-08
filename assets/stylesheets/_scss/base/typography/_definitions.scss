@@ -1,17 +1,19 @@
-//
-// base/typography/definitions: all SCSS typography definitions.
-//
+/// =====
+/// base/typography/definitions
+/// SCSS typography definitions.
+/// =====
 
-// VARIABLES
+// FAMILIES
+$default-font: -apple-system, 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+$body-font: 'Roboto', sans-serif;
+$title-font: 'Questrial', $body-font;
 
-// families
-$body-font: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-$title-font: 'Work Sans', $body-font;
-
-// sizes
+// SIZES
 $default-font-size: 100%;                       // 16px
 
-$logo-size: $default-font-size * 5;             // 500%/80px
+$lg-font-size: $default-font-size * 1.25;       // 125%/20px
+$md-font-size: $default-font-size * 1.125;      // 112.5%/18px
+$sm-font-size: $default-font-size * 0.9375;     // 93.75%/15px
 
 $heading-1: $default-font-size * 4;             // 400%/64px
 $heading-2: $default-font-size * 3;             // 300%/48px
@@ -19,37 +21,15 @@ $heading-3: $default-font-size * 2.5;           // 250%/40px
 $heading-4: $default-font-size * 2.25;          // 225%/36px
 $heading-5: $default-font-size * 2;             // 200%/32px
 $heading-6: $default-font-size * 1.5;           // 150%/24px
-$heading-7: $default-font-size * 1.25;          // 125%/20px
-$small-font-size: $default-font-size * 0.875;     // 87.5%/14px
 
-// spacing
+// SPACING
 $default-lh: 100%;
 $body-lh: $default-lh * 1.625;                  // 162.5%
+
 $lh-1: $default-lh * 1.5;                       // 150%
 $lh-2: $default-lh * 1.25;                      // 125%
 $lh-3: $default-lh * 1.1;                       // 110%
 
-// weights
-$hairline: 100;
-$thin: 200;
+// WEIGHTS
 $light: 300;
-
-// font map
-$fonts: (
-    'body': #{$default-font-size}/#{$body-lh} $body-font,
-    'heading-1': $thin #{$heading-3}/#{$lh-3} $title-font,
-    'heading-2': $thin #{$heading-6}/#{$lh-1} $title-font,
-    'heading-3': $light #{$heading-7}/#{$lh-2} $title-font,
-);
-
-
-// FUNCTIONS
-@function font($key){
-
-    @if map-has-key($fonts, $key) {
-        @return map-get($fonts, $key);
-    }
-
-    @warn "Unknown `#{$key}` in fonts map.";
-    @return null;
-}
+$regular: 400;

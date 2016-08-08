@@ -1,0 +1,18 @@
+/// =====
+/// fonts/questrial
+/// font declarations for the Questrial font.
+/// =====
+
+$family-name: 'Questrial';
+$file-name: 'questrial';
+$dest: '/assets/fonts/#{$file-name}/#{$file-name}';
+
+@font-face {
+  font-family: $family-name;
+  src: url('#{$dest}-regular.eot');
+  src: url('#{$dest}-regular.eot?#iefix') format('embedded-opentype'),
+       url('#{$dest}-regular.woff') format('woff'),
+       url('#{$dest}-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

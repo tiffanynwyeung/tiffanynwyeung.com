@@ -1,34 +1,28 @@
-//
-// modules/logo: the default brand & logo styles.
-//
+/// =====
+/// modules/logo
+/// brand & logo defaults.
+/// =====
 
 .logo {
+  width: 82.5%;
 
-    &--nameplate, &--nav {
-        width: 1.125em;
-        height: 0.95em;
-        padding: 0.275em 0.2875em 0.275em 0.1875em;
-        @include center-relative;
-        display: inline-block;
-        overflow: hidden;
-        font-size: $logo-size;
-        letter-spacing: -0.0625em;
-    }
+  @media all and (min-width: $lg-mobile-width) {
+    width: 50%;
+  }
 
-    &--nameplate {
-        top: 0;
-        left: 0;
-    }
+  &__fname {
+    position: absolute;
+    left: 0;
+  }
 
-    &--nav {
-        @if $stylesheet-type == 'landing' {
-            cursor: default;
-        } @else {
-            cursor: pointer;
-        }
-        border: $primary-border;
-        font-size: 40px;
-        font-weight: $light;
-        @include transition($medium-transition);
+  &__lname {
+    margin: 37.5% 0 0 0;
+    position: relative;
+    left: -12.5%;
+
+    @media all and (min-width: $lg-mobile-width) {
+      margin-top: 9%;
+      left: 11%;
     }
+  }
 }

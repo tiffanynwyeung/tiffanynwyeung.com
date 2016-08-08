@@ -1,36 +1,29 @@
-//
-// modules/footer: the default footer style.
-//
+/// =====
+/// modules/footer
+/// the default footer.
+/// =====
 
 footer {
-    width: 100%;
-    padding: 2em 0;
-    background: color('black');
+  width: 100%;
+  padding: 2em 0 4em 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: color('blue', 'darker');
+  font-size: $default-font-size;
+  line-height: $default-lh;
+  color: color('sky');
+  text-align: center;
 
-    p {
-        text-align: center;
-    }
+  ul {
+    padding: 0;
+    margin: 0;
+    display: inline;
+    list-style: none;
+  }
 
-    ul {
-        padding: 0;
-        margin: 0;
-        display: inline;
-        list-style: none;
-    }
-
-    li{
-        margin: 1em;
-        display: inline-block;
-    }
-}
-
-span.genericon {
-    font-size: $heading-5;
-    color: color('white', 'chrome');
-    @include transition($default-transition);
-
-    &:hover, &:active {
-        color: color('white');
-        @include transition($default-transition);
-    }
+  li {
+    margin: 0 1em;
+    display: inline-block;
+  }
 }

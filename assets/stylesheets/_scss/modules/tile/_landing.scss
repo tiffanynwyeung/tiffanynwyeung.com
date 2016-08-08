@@ -1,0 +1,69 @@
+/// =====
+/// modules/tile/landing
+/// tile module styles for landing page.
+/// =====
+
+.tile {
+  &__btn {
+    width: auto;
+    height: 1em;
+    padding: 1em;
+    margin: 1em auto;
+    position: relative;
+    display: none;
+    border: 0.125em solid color('sky');
+    font: $light #{$md-font-size}/#{$default-lh} $title-font;
+    letter-spacing: 0;
+    text-transform: lowercase;
+
+    @media all and (min-width: $sm-desktop-width) {
+      display: inline-block;
+    }
+  }
+
+  @media all and (min-width: $sm-desktop-width) {
+
+    &__bg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: z-index('second');
+      background: color('gold', 'dark');
+      transform: translateX(-300%);
+      transition: transform 375ms ease-in-out 100ms;
+
+      &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: 0;
+        display: inline-block;
+        border-style: solid;
+        border-width: 0 0 310px 310px;
+        border-color: transparent transparent transparent color('gold', 'dark');
+        transform: translateX(100%);
+      }
+    }
+
+    &__data {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      opacity: 0;
+      z-index: z-index('third');
+      transition: opacity 250ms ease-in-out 50ms;
+    }
+
+    &__info {
+      width: 90%;
+      height: 80%;
+      padding: 5%;
+      position: relative;
+      display: block;
+    }
+  }
+}

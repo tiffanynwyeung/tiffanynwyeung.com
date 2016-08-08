@@ -1,4 +1,4 @@
-# tiffanynwyeung.github.io
-My portfolio website, including all source files of the work I've done. Built with HTML5, SCSS/CSS3, JQuery, and Jekyll.
+# tiffanynwyeung.com
+My personal website. Built with HTML5, SCSS/CSS3, and JS; compiled in Jekyll.
 
-Current website theme documented as "[01] NYX".
+Current website theme documented as "[02] FLUX".

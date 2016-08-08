@@ -1,29 +1,41 @@
-//
-// base/typography/typography: the default standard typography styles.
-//
+/// =====
+/// base/typography/typography
+/// default typography styles.
+/// =====
 
 h1 {
-    padding: 0.3em;
-    margin: 0;
-    font: font('heading-1');
-    color: color('gold');
-    @include center-allcaps;
+  padding: 0.375em;
+  margin: 0;
+  font: $regular #{$heading-5}/#{$lh-3} $title-font;
+  color: color('gold', 'dark');
 
-    @media all and (min-width: $desktop-width-media) and (min-height: $desktop-height-media) {
-        font-size: $heading-1;
-    }
+  @media all and (min-width: $md-mobile-width) {
+    font-size: $heading-3;
+  }
+
+  @media all and (min-width: $tablet-size) {
+    font-size: $heading-2;
+  }
+
+  @media all and (min-width: $sm-desktop-width) {
+    font-size: $heading-1;
+  }
 }
 
 h2 {
-    margin: 1em auto;
-    font: font('heading-2');
-    letter-spacing: 0.05em;
-    @include center-allcaps;
+  margin: 1em auto;
+  font: $regular #{$heading-6}/#{$lh-1} $title-font;
+
+  @media all and (min-width: $sm-desktop-width) {
+    font-size: $heading-5;
+  }
 }
 
 h3 {
-    margin: 0;
-    font: font('heading-3');
-    letter-spacing: 0.0625em;
-    @include center-allcaps;
+  margin: 0;
+  font: $regular #{$md-font-size}/#{$lh-2} $title-font;
+
+  @media all and (min-width: $sm-desktop-width) {
+    font-size: $heading-6;
+  }
 }

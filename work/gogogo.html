@@ -1,0 +1,51 @@
+---
+layout: page
+type: project
+
+name: gogogo
+title: Go Go Go
+description: "The board game Go, implemented as a multiplayer web app through Go and React. WIP."
+
+# NAVIGATION
+previous: tydesigns
+previous-title: TY Designs
+next: rememberwhen
+next-title: Remember When
+---
+
+<ul class="btn-group btn-group">
+  <li class="btn-group__item">
+    <a href="//github.com/SEkiSoft/GoGoGo" class="btn">View on Github</a>
+  </li>
+</ul>
+
+<section class="section">
+  <h1 class="section__title">Backstory.</h1>
+  <div class="section__content">
+    <p>A few days after AlphaGo became famous, my close friend <a href="//david-lu.com">David</a> was inspired to create his own version of Go using the language Go... and thus, the idea (and name) of <i>Go Go Go</i> was born.</p>
+    <p>A few months later, <i>Go Go Go</i> expanded to include several others to work on the API, and David invited me to help create the design of the app's user interface, as well as implement it in React.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h1 class="section__title">Design Process.</h1>
+  <div class="section__content">
+    <p>My role on <i>Go Go Go</i> was designing the user interface for the web client. This included the public website, signup/login screen, user dashboard, matchmaking queue, and the look of the game itself.</p>
+    <p>I took to paper and pen first, jotting down every requirement or necessity and then sketching out multiple ideas for each screen:</p>
+    <ul>
+      <li><p><b>Public Website</b>: The only requirement was to include a short blurb introducing the project, what it's about, and invite users to join the game. This could easily be modified to display a simple sign-up form as well.</p></li>
+      <li><p><b>Login/Signup Screen</b>: At the time, the only necessities for the signup screen were fields for email, username, and password/password confirmation, as the project currently allows users to log into their dashboard immediately after signup. Meanwhile, the login screen would look similar, with only two fields instead of three, but would include a "forgotten password" link. Both screens would have various interactions notifying users of invalid input.</p></li>
+      <li><p><b>Dashboard</b>: The main content of the dashboard would be the user profile, detailing their chosen name, wins, losses, and so on; the two options to play against either AI or go through matchmaking against people online; and a menu that listed various account settings. This, along with the game screen, was one of the most complex screens — or rather, was the gateway to multiple screens, making it extremely important to focus on designing this screen correctly.</p></li>
+      <li><p><b>Queue/Loading</b>: This screen was extremely simple, as it would display a "Queueing game..." message, along with a few details such as "estimated time".</p></li>
+      <li><p><b>Game</b>: This screen required the most thought, as it involved heavy user interaction. Aspects to think about included how the user could place pieces on the board, displaying both opponents' profile information and scores, end turn button, obvious indicators of when it was the opponent's turn and when it was the player's turn, and so on.</p></li>
+    </ul>
+    <p>There were also other, less pressing concerns to think about implementing, such as onboarding for new users, valid/invalid interactions and the resulting messaging that would pop up, and so on.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h1 class="section__title">Development.</h1>
+  <div class="section__content">
+    <p>Coming soon!</p>
+  </div>
+</section>

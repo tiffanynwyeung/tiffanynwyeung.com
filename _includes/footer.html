@@ -1,18 +1,25 @@
-{% if page.title == "Index" %}
-<footer id="contact" class="content__wrapper">
-    <div class="content">
-        <h1>Contact</h1>
-        <p>Want to find out more about me? <a href="assets/files/resume.pdf">Check out my resume</a>, and let's talk — I'd love to hear from you!</p>
-{% else %}
 <footer>
-    <p>Copyright &copy; Tiffany Yeung <time datetime="{{ site.time | date_to_string }}">{{ site.time | date: '%Y' }}</time>.</p>{% endif %}
-    <ul>
-        <li><a href="mailto:{{ site.social_media_username }}@gmail.com" title="Email"><span class="genericon genericon-mail"></span></a></li>
-        <li><a href="//github.com/{{ site.social_media_username }}" title="Github"><span class="genericon genericon-github"></span></a></li>
-        <li><a href="//linkedin.com/in/{{ site.social_media_username }}" title="LinkedIn"><span class="genericon genericon-linkedin"></span></a></li>
-    </ul>
-    {% if page.title == "Index" %}
-        <p>Copyright &copy; Tiffany Yeung <time datetime="{{ site.time | date_to_string }}">{{ site.time | date: '%Y' }}</time>.</p>
-    </div>
-    {% endif %}
+  <p>&copy; Tiffany Yeung <time>2016</time>&ndash;<time>2017</time>.</p>
+  <ul>
+    <li>
+      <address>
+        <a href="mailto:{{ site.username }}@gmail.com" title="Email" aria-label="Email">
+          <span class="genericon genericon-mail icon--media" aria-hidden="true"></span>
+          <span class="icon__desc">Email</span>
+        </a>
+      </address>
+    </li>
+    <li>
+      <a href="//github.com/{{ site.username }}" title="Github" aria-label="GitHub">
+        <span class="genericon genericon-github icon--media" aria-hidden="true"></span>
+        <span class="icon__desc">GitHub</span>
+      </a>
+    </li>
+    <li>
+      <a href="//linkedin.com/in/{{ site.username }}" title="LinkedIn" aria-label="LinkedIn">
+        <span class="genericon genericon-linkedin icon--media" aria-hidden="true"></span>
+        <span class="icon__desc">LinkedIn</span>
+      </a>
+    </li>
+  </ul>
 </footer>

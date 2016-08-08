@@ -1,0 +1,43 @@
+---
+layout: page
+type: project
+
+name: tydesigns
+title: TY Designs
+description: "A collection of sites I built as a freelance web designer."
+
+previous: symphonythemes
+previous-title: Symphony Themes
+next: gogogo
+next-title: Go Go Go
+---
+
+<section class="section">
+  <h1 class="section__title">Portfolio.</h1>
+  <div class="section__content">
+    <ul class="grid">
+      {% for tile in site.data.tydesigns %}
+        <li class="grid__item grid__item--sm">
+          <a class="tile" href="{{ tile.url }}">
+            <h2 class="tile__title tile__title--portfolio">{{ tile.title }}</h2>
+            <img src="/assets/img/{{ page.name | remove: '.html' }}/{{ tile.name }}.png" alt="Background preview image of this design." class="tile__img">
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h1 class="section__title">Backstory.</h1>
+  <div class="section__content">
+    <p>Not long after realizing that I enjoyed design and coding together, I decided to start doing freelance work between school and other extracurriculars. It mostly remained as a hobby rather than a full-fledged business, as commissions were received mainly from friends looking for a portfolio website. However, occasionally I created web-related interfaces for hackathon projects, web apps, and so on.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h1 class="section__title">Results.</h1>
+  <div class="section__content">
+    <p>Coupled with <a href="/work/symphonythemes" title="Symphony Themes">Symphony Themes</a>, doing this type of commissioned work has helped me hone my design abilities. With TY Designs however, I've gotten the chance to work on bigger interfaces that have more strict requirements. It's also been one of the more intensive projects I do, as many of the projects I need to finish within an extremely short timeframe, and so I move through my design and development process as fast as possible, sharing progress images and prototypes often. This also means I've scrapped certain designs too complex to finish within the amount of time given, but of course that's always going to be a tradeoff. However, I've been complimented numerous times by my clients for my ability to get everything done and in a timely manner, to the point where I've been offered the chance to work on more projects from some of my previous clients.</p>
+  </div>
+</section>
