@@ -1,0 +1,9 @@
+//
+// modules/animations/page: animations for general pages.
+//
+
+.page {
+    will-change: transform;
+    @include transform(translateZ(0));
+    @extend %animation--fadeindownsoft;
+}

@@ -4,12 +4,14 @@
 
 footer {
     width: 100%;
+    height: auto;
     padding: 2em 0;
-    background: color('black');
-
-    p {
-        text-align: center;
-    }
+    position: relative;
+    background: color('blue', 'navy');
+    font-size: $default-font-size;
+    line-height: $default-lh;
+    color: color('white', 'silver');
+    text-align: center;
 
     ul {
         padding: 0;
@@ -18,19 +20,13 @@ footer {
         list-style: none;
     }
 
-    li{
+    li {
         margin: 1em;
         display: inline-block;
     }
-}
 
-span.genericon {
-    font-size: $heading-5;
-    color: color('white', 'chrome');
-    @include transition($default-transition);
-
-    &:hover, &:active {
-        color: color('white');
-        @include transition($default-transition);
+    ::selection {
+        background: transparent;
+        color: color('gold', 'amber');
     }
 }

@@ -1,0 +1,31 @@
+//
+// modules/animations/landing: animations for landing page.
+//
+
+// LANDING: HEADER
+
+.logo--first-name, .logo--last-name {
+    will-change: transform;
+    @include transform(translateZ(0));
+}
+
+@media all and (min-height: $lg-mobile-height), (min-width: $xl-mobile-width) {
+    .subtitle--word1, .subtitle--word2, .subtitle--word3 {
+        will-change: transform;
+        @include transform(translateZ(0));
+    }
+}
+
+@include list-fadein($logo-list, '.logo', 0.625, 0.5);
+
+@include num-fadein(3, '.subtitle', 'word', 1.5, 0.5);
+
+// LANDING: WORK SECTION
+
+.section--landing {
+    will-change: transform;
+    @include transform(translateZ(0));
+    @extend %animation--fadeindownsoft;
+}
+
+@include list-fadein($section-list, '.section', 0.25, 0.5);

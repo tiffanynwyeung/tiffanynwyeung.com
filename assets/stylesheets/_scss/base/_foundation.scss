@@ -1,5 +1,5 @@
 //
-// base/foundation: the default CSS styles for standard HTML elements.
+// base/foundation: the default CSS for standard HTML elements.
 //
 
 html, body {
@@ -8,19 +8,32 @@ html, body {
     padding: 0;
     border: 0;
     margin: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background: color('black');
-    font: font('body');
-    color: color('white', 'titanium');
-    text-align: center;
+    background: color('white', 'titanium');
+    font: $light #{$default-font-size}/#{$body-lh} $body-font;
+    color: color('black', 'jet');
     word-break: break-word;
     vertical-align: baseline;
 }
 
+body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 p {
     margin: 1.5em 0;
-    text-align: left;
+    font-size: $sm-font-size;
+
+    @media all and (min-width: $sm-mobile-width) {
+        font-size: $default-font-size;
+    }
+
+    @media all and (min-width: $tablet-size) {
+        font-size: $md-font-size;
+        line-height: $body-lh;
+    }
 }
 
 ul {
@@ -30,31 +43,18 @@ ul {
 }
 
 a {
-    color: color('gold', 'amber');
+    font-weight: $regular;
+    color: color('gold');
     text-decoration: none;
     @include transition($default-transition);
 
     &:hover, &:active {
-        color: color('gold');
+        color: color('gold', 'burnt');
         @include transition($default-transition);
     }
 }
 
-input {
-
-    &[type="radio"] {
-        display: none;
-    }
-}
-
-label {
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
 ::selection {
     background: transparent;
-    color: color('gold', 'topaz');
+    color: color('gold', 'burnt');
 }

@@ -1,17 +1,17 @@
 <head>
-    <title>{% if page.title == "Index" %}{{ site.name }}{% else %}{{ page.title }} &#124; {{ site.name }}{% endif %}</title>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% else %}<meta name="description" content="Tiffany Yeung is a freelance web developer and Computer Science student at the University of Waterloo, always eager to grow, learn, and build.">{% endif %}
+    <title>{% if page.title == 'Index' %}{{ site.name }}{% else %}{{ page.title }} &#124; {{ site.name }}{% endif %}</title>
 
-    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% else %}<meta name="keywords" content="Tiffany, Yeung, university, waterloo, uwaterloo, cs, computer, science, software, web, design, development, ui, ux, blog">{% endif %}
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.keywords }}">
 
-    <link href="assets/img/favicon.png" rel="icon" type="image/png">
+    <link href="/assets/img/favicon.png" rel="icon" type="image/png">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <style>@font-face{font-family:"Roboto";src:url("/assets/fonts/roboto/roboto-thin.eot");src:url("/assets/fonts/roboto/roboto-thin.eot?#iefix") format("embedded-opentype"),url("/assets/fonts/roboto/roboto-thin.woff") format("woff"),url("/assets/fonts/roboto/roboto-thin.ttf") format("truetype");font-weight:100;font-style:normal}@font-face{font-family:"Roboto";src:url("/assets/fonts/roboto/roboto-thin-italic.eot");src:url("/assets/fonts/roboto/roboto-thin-italic.eot?#iefix") format("embedded-opentype"),url("/assets/fonts/roboto/roboto-thin-italic.woff") format("woff"),url("/assets/fonts/roboto/roboto-thin-italic.ttf") format("truetype");font-weight:100;font-style:italic}@font-face{font-family:"Roboto";src:url("/assets/fonts/roboto/roboto-light.eot");src:url("/assets/fonts/roboto/roboto-light.eot?#iefix") format("embedded-opentype"),url("/assets/fonts/roboto/roboto-light.woff") format("woff"),url("/assets/fonts/roboto/roboto-light.ttf") format("truetype");font-weight:300;font-style:normal}@font-face{font-family:"Roboto";src:url("/assets/fonts/roboto/roboto-light-italic.eot");src:url("/assets/fonts/roboto/roboto-light-italic.eot?#iefix") format("embedded-opentype"),url("/assets/fonts/roboto/roboto-light-italic.woff") format("woff"),url("/assets/fonts/roboto/roboto-light-italic.ttf") format("truetype");font-weight:300;font-style:italic}@font-face{font-family:"Roboto";src:url("/assets/fonts/roboto/roboto-regular.eot");src:url("/assets/fonts/roboto/roboto-regular.eot?#iefix") format("embedded-opentype"),url("/assets/fonts/roboto/roboto-regular.woff") format("woff"),url("/assets/fonts/roboto/roboto-regular.ttf") format("truetype");font-weight:normal;font-style:normal}@font-face{font-family:"Roboto";src:url("/assets/fonts/roboto/roboto-italic.eot");src:url("/assets/fonts/roboto/roboto-italic.eot?#iefix") format("embedded-opentype"),url("/assets/fonts/roboto/roboto-italic.woff") format("woff"),url("/assets/fonts/roboto/roboto-italic.ttf") format("truetype");font-weight:normal;font-style:italic}@font-face{font-family:"Questrial";src:url("/assets/fonts/questrial/questrial-regular.eot");src:url("/assets/fonts/questrial/questrial-regular.eot?#iefix") format("embedded-opentype"),url("/assets/fonts/questrial/questrial-regular.woff") format("woff"),url("/assets/fonts/questrial/questrial-regular.ttf") format("truetype");font-weight:normal;font-style:normal}
+</style>
 
-    <link href='//fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-    {% if page.title == "Index" %}<link href="assets/stylesheets/landing.css" rel="stylesheet">{% else %}<link href="assets/stylesheets/global.css" rel="stylesheet">{% endif %}
+    <link href="/assets/stylesheets/{% if page.title == 'Index' %}landing{% else %}page{% endif %}.css" rel="stylesheet">
 </head>

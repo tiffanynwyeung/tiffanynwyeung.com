@@ -7,22 +7,31 @@ $color-variant: 'base' !default;
 
 $color-palette: (
     'gold': (
+        'burnt': #945523,
         'base': #d1944c,
-        'amber': #f5b96d,
-        'topaz': #e7c28d
+        'citrine': #e6a65c,
+        'amber': #ffcd8e,
+        'topaz': #e7c28d,
+    ),
+    'blue': (
+        'navy': #141822,
+        'gunmetal': #1f232f,
+        'base': #4f5463,
     ),
     'black': (
-        'base': #070b15,
-        'onyx': #13161d,
+        'jet': rgba(0,0,0,0.8),
+        'base': #171a21,
         'obsidian': #20242f,
         'charcoal': #23252b,
         'slate': #33353c,
     ),
     'white': (
+        'iron': #b6b9c0,
+        'steel': rgba(255,255,255,0.625),
+        'silver': rgba(255,255,255,0.75),
+        'chrome': rgba(255,255,255,0.875),
+        'titanium': rgba(255,255,255,0.9375),
         'base': rgba(255,255,255,1),
-        'titanium': rgba(255,255,255,0.75),
-        'chrome': rgba(255,255,255,0.625),
-        'silver': rgba(255,255,255,0.5),
     )
 );
 

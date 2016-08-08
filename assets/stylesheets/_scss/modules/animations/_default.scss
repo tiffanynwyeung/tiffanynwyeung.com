@@ -1,0 +1,16 @@
+//
+// animations/default: default animations across the site.
+//
+
+header {
+    will-change: transform;
+    @include transform(translateZ(0));
+    @extend %animation--fadeindown;
+    @include animation-delay(0.25s);
+}
+
+footer {
+    will-change: transform;
+    @include transform(translateZ(0));
+    @extend %animation--fadeinup;
+}

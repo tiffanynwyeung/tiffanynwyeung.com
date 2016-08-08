@@ -1,33 +1,183 @@
 //
-// modules/tile: the default tile styling.
+// modules/tile: a tile module.
 //
 
 .tile {
-    width: calc(100% - 2em - 4px);
-    padding: 1em 0;
-    margin: 1em auto;
+    width: 95%;
+    height: 20vh;
+    margin: 2.5%;
+    position: relative;
     display: block;
-    background: color('black', 'slate');
-    border: $hidden-border;
-    color: color('gold', 'amber');
-    @include center-allcaps;
-    @include transition($default-transition);
+    overflow: hidden;
+
+    @media all and (min-width: $xl-mobile-width) {
+        width: 98%;
+        margin: 1%;
+    }
+
+    @media all and (min-width: $desktop-width) {
+        width: 48%;
+        height: 14em;
+        margin: 0 1%;
+        display: inline-block;
+    }
+
+    &--portfolio {
+        
+        @media all and (min-width: $desktop-width) {
+            height: 10em;
+        }
+    }
+
+    &__item {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: block;
+        background: color('black', 'slate');
+        color: color('white', 'chrome');
+        text-align: center;
+        transition: color 0.5s ease-in-out;
+
+        &:hover, &:active {
+            color: color('white', 'silver');
+
+            @media all and (min-width: $desktop-width) {
+
+                & .tile__bg {
+                    transform: translateX(0);
+                    transition: 250ms transform ease-in-out 50ms;
+                }
+            }
+        }
+
+        @media all and (min-width: $tablet-size) {
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none;
+                background: rgba(color('black', 'slate'), 0.8);
+            }
+        }
+    }
 
     &__title {
+        @include center-absolute;
+        top: 50%;
+        z-index: z('base');
+        font-size: $lg-font-size;
+        transform: translateY(-50%);
+
+        @media all and (min-width: $md-mobile-width) {
+            font-size: $heading-6;
+        }
+    }
+
+    @media all and (min-width: $desktop-width) {
+
+        &__bg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: z('second-topmost');
+            background: color('gold');
+            transform: translateX(-300%);
+            transition: transform 375ms ease-in-out 100ms;
+
+            &:before {
+                content: '';
+                width: 0;
+                height: 0;
+                position: absolute;
+                right: 0;
+                display: inline-block;
+                border-style: solid;
+                border-width: 0 0 310px 310px;
+                border-color: transparent transparent transparent color('gold');
+                transform: translateX(100%);
+            }
+        }
+    }
+
+    &__info {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        opacity: 0;
+        z-index: z('topmost');
+
+        @media all and (min-width: $desktop-width) {
+            transition: opacity 250ms ease-in-out 50ms;
+        }
+
+        &:hover {
+            @media all and (min-width: $desktop-width) {
+                opacity: 1;
+                transition: opacity 375ms ease-in-out 100ms;
+            }
+        }
+
+        &-wrapper {
+            width: 90%;
+            height: 80%;
+            padding: 5%;
+            position: absolute;
+            display: block;
+        }
+    }
+
+    &__desc {
+        display: none;
+
+        @media all and (min-width: $desktop-width) {
+            margin-bottom: 0.5em;
+            display: block;
+            font-size: $default-font-size;
+            font-weight: $light;
+        }
+    }
+
+    &__button {
+        width: auto;
+        height: 1em;
+        padding: 1em;
+        margin: 1em auto;
+        position: relative;
+        display: none;
+        border: 0.125em solid color('white', 'silver');
+        font-family: $title-font;
         font-weight: $light;
         line-height: $default-lh;
+        letter-spacing: 0;
+        text-transform: lowercase;
+
+        @media all and (min-width: $desktop-width) {
+            display: inline-block;
+        }
     }
 
-    &:hover, &:active {
-        background: color('black', 'obsidian');
-        border: $primary-border;
-        color: color('gold');
-        @include transition($default-transition);
-    }
+    &__img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
 
-    @media all and (min-width: $desktop-width-media) {
-        width: calc(49% - 2em - 4px);
-        margin: 1em;
-        display: inline-block;
+        @media all and (min-width: $tablet-size) {
+            display: block;
+        }
+
+        @media all and (min-width: $desktop-width) {
+            height: 100%;
+        }
     }
 }

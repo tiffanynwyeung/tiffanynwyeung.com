@@ -1,9 +1,40 @@
 ---
 layout: default
 ---
-<main>
-    <section class="content">
-        {{ content }}
-    </section>
-    {% include footer.html %}
-</main>
+
+<header>
+    <nav class="nav">
+        <ul>
+            {% if page.type == 'project' %}
+            <li class="nav__link-wrapper nav__link-wrapper--left">
+                {% if page.previous %}<a class="nav__link--prev" href="/work/{{ page.previous }}">
+                    <span class="genericon genericon-previous icon--nav"></span>
+                    <span class="nav__link-desc">{{ page.previous-title }}</span>
+                </a>{% endif %}
+            </li>
+            <li class="nav__link-wrapper">
+                <a class="nav__link--redirect" href="/">Back to Site</a>
+            </li>
+            <li class="nav__link-wrapper nav__link-wrapper--right">
+                {% if page.next %}<a class="nav__link--next" href="/work/{{ page.next }}">
+                    <span class="nav__link-desc">{{ page.next-title }}</span>
+                    <span class="genericon genericon-next icon--nav"></span>
+                </a>{% endif %}
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <h1 class="page__title">{% if page.type == 'error' %}{{ page.heading }}{% else %}{{ page.title }}{% endif %}</h1>
+    <h2 class="page__subtitle">{{ page.subtitle }}</h2>
+</header>
+
+<div class="page">
+    {{ content }}
+    {% if page.type == 'project' %}
+    <ul class="page-link__list section--project">
+        <li class="page-link">
+            <a href="/work/{{ page.name }}" class="page-link__button back-to-top">Back to Top</a>
+        </li>
+    </ul>
+    {% endif %}
+</div>

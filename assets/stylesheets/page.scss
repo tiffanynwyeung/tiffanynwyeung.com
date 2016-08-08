@@ -1,0 +1,41 @@
+---
+# global.scss: global stylesheet. compiled via jekyll.
+---
+
+// CORE SETTINGS
+@import 'base/normalize';
+
+@import 'base/colors';
+@import 'base/typography/definitions';
+@import 'base/z-index';
+@import 'base/settings/variables';
+@import 'base/settings/mixins';
+
+// FONTS
+@import 'fonts/genericons';
+
+// BASELINE
+@import 'base/foundation';
+@import 'base/typography/typography';
+@import 'base/typography/icons';
+
+// ANIMATIONS -- imported first here for optimization
+@import 'modules/animations/mixins';
+@import 'modules/animations/extends';
+@import 'modules/animations/default';
+@import 'modules/animations/page';
+
+@import 'base/layout/default';
+@import 'base/layout/page';
+
+// MODULES
+@import 'modules/footer';
+@import 'modules/navigation';
+@import 'modules/grid';
+@import 'modules/tile';
+
+// SECTIONS
+@import 'sections/portfolio';
+
+// ANIMATION KEYFRAMES
+@import 'modules/animations/keyframes';

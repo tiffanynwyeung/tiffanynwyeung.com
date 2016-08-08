@@ -2,10 +2,11 @@
 // modules/animations/mixins: all resuable animation mixins.
 //
 
+
+// DEFAULT MIXINS
+
 // KEYFRAMES
-
 @mixin keyframes($keyframes) {
-
     @-webkit-keyframes #{$keyframes} {
         @content;
     }
@@ -24,7 +25,6 @@
 }
 
 // ANIMATION SETTINGS
-
 @mixin animation($animation) {
     -webkit-animation: $animation;
     -moz-animation: $animation;
@@ -86,4 +86,37 @@
     -moz-animation-play-state: $play;
     -o-animation-play-state: $play;
     animation-play-state: $play;
+}
+
+
+// PROJECT-SPECIFIC MIXINS
+
+@mixin list-fadein($list, $elemname, $delay, $rpt-delay) {
+    @at-root {
+        @each $item in $list {
+            #{$elemname} {
+                &--#{$item} {
+                    @extend %animation--fadeindown;
+                    @include animation-delay(#{$delay}s);
+                }
+            }
+
+            $delay: $delay + $rpt-delay;
+        }
+    }
+}
+
+@mixin num-fadein($iterationamount, $elemname, $itemname, $delay, $rpt-delay) {
+    @at-root {
+        @for $i from 1 through $iterationamount {
+            #{$elemname} {
+                &--#{$itemname}#{$i} {
+                    @extend %animation--fadeindown;
+                    @include animation-delay(#{$delay}s);
+                }
+            }
+
+            $delay: $delay + $rpt-delay;
+        }
+    }
 }

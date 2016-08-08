@@ -1,0 +1,25 @@
+//
+// base/typography/icons: standard icon styles.
+//
+
+.icon {
+
+    &--media, &--nav {
+        font-size: $heading-5;
+    }
+
+    &--media {
+        color: color('white', 'silver');
+        @include transition($default-transition);
+
+        &:hover, &:active {
+            color: color('white');
+            @include transition($default-transition);
+        }
+    }
+
+    &--nav {
+        display: inline-block;
+        line-height: $default-lh/2;
+    }
+}

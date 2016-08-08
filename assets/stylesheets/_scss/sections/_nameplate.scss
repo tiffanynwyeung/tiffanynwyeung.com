@@ -1,113 +1,141 @@
 //
-// sections/nameplate: specific styling for the nameplate section.
+// sections/nameplate: default nameplate styling.
 //
 
 .nameplate {
-    width: 80vw;
-    height: 12.5em;
-    margin: -6.25em auto 0 auto;
+    width: 100vw;
+    height: 100vh;
     position: relative;
-    top: 50%;
+    text-align: center;
+    background: color('blue', 'gunmetal');
 
-    &__border-container {
-        width: 8em;
-        height: 7.5em;
-        padding: 0;
-        @include center-relative;
+    @media all and (min-height: $sm-mobile-width) {
+        height: 87.5vh;
+        padding: 10vh 10vw 0 10vw;
+        margin: -10vh -10vw 0 -10vw;
+        @include transform(rotate(3.5deg));
     }
 
     &__content {
-        width: 8em;
-        padding: 0;
-        @include center-absolute;
-        top: 0;
+        width: 82.5%;
+        height: 50%;
+        margin: 0 auto;
+        position: relative;
+        top: 10%;
 
-        @media all and (min-width: $desktop-width-media) {
-            width: 43.75em;
+        @media all and (min-height: $sm-mobile-width) {
+            top: 50%;
+            @include transform(rotate(-3.5deg) translateY(-62.5%));
+        }
+
+        @media all and (min-width: $xl-mobile-width) {
+            @include transform(rotate(-3.5deg) translateY(-50%));
+        }
+    }
+
+    &__title {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        left: 12.5%;
+
+        @media all and (min-width: $md-mobile-width) {
+            width: 82.5%;
+            margin: 0 0 0 auto;
+            left: 0;
+        }
+
+        @media all and (min-width: $xl-mobile-width) {
+            left: -2.5%;
+        }
+
+        @media all and (min-width: $desktop-width) {
+            width: 62.5%;
+            margin: 0 auto;
+            left: 2.5%;
         }
     }
 
     &__subtitle {
+        display: none;
 
-        &--name {
-            display: block;
+        h2 {
+            font-size: 144.44%;
+            letter-spacing: 2px;
+            text-align: center;
 
-            @media all and (min-width: $desktop-width-media) {
-                display: none;
-            }
-        }
-
-        &--tagline {
-            display: none;
-
-            @media all and (min-width: $medium-mobile-width) {
+            @media all and (min-width: $xl-mobile-width) {
                 display: block;
+                font-size: $heading-6;
+            }
+
+            @media all and (min-width: $tablet-size) {
+                display: inline-block;
+            }
+
+            @media all and (min-width: 87.5em) {
+                font-size: $heading-5;
+            }
+        }
+
+        @media all and (min-height: $sm-mobile-height) {
+            width: 75%;
+            margin: 0 auto;
+            position: relative;
+            top: 0;
+            left: 5%;
+            display: block;
+        }
+
+        @media all and (min-height: $md-mobile-height) {
+            top: 2.5em;
+            left: 0;
+        }
+
+        // for all tablets/approximately-sized devices
+        @media all and (min-width: $tablet-size) {
+            margin: 0 auto;
+            position: relative;
+            top: -1%;
+            left: -3%;
+            display: block;
+        }
+
+        // for all devices with desktop screen sizes of 1000+
+        @media all and (min-width: $desktop-width) {
+            width: 50%;
+        }
+    }
+}
+
+.subtitle {
+
+    &--word1, &--word2, &--word3 {
+        margin: 0;
+        color: color('white', 'chrome');
+        text-transform: lowercase;
+    }
+
+    @media all and (min-width: $tablet-size) {
+
+        &--word1 {
+            margin-top: -1em;
+            position: absolute;
+            left: 2em;
+        }
+
+        &--word2 {
+            margin: 0 auto;
+        }
+
+        &--word3 {
+            margin: 1em auto 0 auto;
+            position: absolute;
+            right: 0;
+
+            @media all and (min-width: 87.5em) {
+                font-size: $heading-5;
             }
         }
     }
-}
-
-.logo--word:nth-child(even) {
-    display: none;
-
-    @media all and (min-width: $desktop-width-media) {
-        display: inline;
-    }
-}
-
-// BORDER
-
-@if $stylesheet-type == 'landing' {
-
-    .border--title {
-        @extend %border;
-    }
-
-    .tb1, .tb3 {
-        height: 7.5em;
-        @extend %b-odd;
-        animation-name: border-length;
-
-        @media all and (min-width: $desktop-width-media) {
-            @include animation-name(border-length, reverse-border-length);
-
-        }
-    }
-
-    .tb2, .tb4 {
-        width: 8em;
-        @extend %b-even;
-        animation-name: border-width;
-
-        @media all and (min-width: $desktop-width-media) {
-            @include animation-name(border-width, reverse-border-width);
-        }
-    }
-
-    .tb1 {
-        bottom: 0;
-        left: 0;
-        @include animation-delay(0s, 3.3s);
-    }
-
-    .tb2 {
-        top: 0;
-        left: 0;
-        @include animation-delay(0.4s, 2.9s);
-    }
-
-    .tb3 {
-        top: 0;
-        right: 0;
-        @include animation-delay(0.8s, 2.5s);
-    }
-
-    .tb4 {
-        bottom: 0;
-        right: 0;
-        @include animation-delay(1.2s, 2.1s);
-    }
-
-} @else {
-    $result: null;
 }

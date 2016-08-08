@@ -1,98 +1,48 @@
 ---
-layout: default
+layout: landing
 title: Index
 ---
 
-<header>
-    <section class="nameplate">
-        <div class="nameplate__border-container">
-            <span class="border--title tb1"></span>
-            <span class="border--title tb2"></span>
-            <span class="border--title tb3"></span>
-            <span class="border--title tb4"></span>
+<section class="section section--landing" id="about">
+    <h1 class="section__title">About Me.</h1>
+    <div class="section__content">
+        <img src="/assets/img/avatar.png" alt="A picture of Tiffany Yeung." id="about__img">
+        <p>Born and raised in Toronto, Canada, I'm a Computer Science student at the University of Waterloo. I love to design, write code, learn new things,
+            and combine those three together whenever I can.</p>
+        <p>Aside from that, music's a large part of my life. You can find me gravitated towards pianos, or singing along to the latest song
+            that's captured my interest. I also <a href="//medium.com/@{{ site.social_media_username }}">write about everything under the sun</a>, read sci-fi novels,
+            and play games of the video, board, and tabletop variety.</p>
+    </div>
+</section>
+<section class="section section--landing" id="work">
+    <h1 class="section__title">Work I've Done.</h1>
+    <div class="section__content">
+        <div class="grid">
+            {% for row in site.data.portfolio %}<ul class="grid__row">
+                {% for tile in row %}<li class="tile">
+                    <a class="tile__item" id="tile-{{ tile.name }}" href="/work/{{ tile.name }}">
+                        <div class="tile__bg"></div>
+                        <h2 class="tile__title">{{ tile.title }}</h2>
+                        <div class="tile__info">
+                            <div class="tile__info-wrapper">
+                                <p class="tile__desc">{{ tile.desc }}</p>
+                                <div class="tile__button">{% if tile.link-name %}{{ tile.link-name }}{% else %}Learn More{% endif %}</div>
+                            </div>
+                        </div>
+                        {% if tile.preview %}<img src="/assets/img/{{ tile.name }}/preview.png" alt="Background preview image of this project." class="tile__img">{% endif %}
+                    </a>
+                </li>{% endfor %}
+            </ul>{% endfor %}
         </div>
-        <div class="nameplate__content">
-            <h1 class="logo--nameplate">
-                <span class="logo--word">T</span><span class="logo--word">iffany&nbsp;</span><span class="logo--word">Y</span><span class="logo--word">eung</span>
-            </h1>
-        </div>
-        <h2 class="nameplate__subtitle--name">{{ site.name }}.</h2>
-        <h2 class="nameplate__subtitle--tagline">{{ site.tagline }}</h2>
-    </section>
-    <a href="#about" class="nav--arrow">v</a>
-</header>
-<main>
-    <section id="about" class="content__wrapper">
-        <div class="content">
-            <h1>About</h1>
-            <img src="assets/img/creator.png" class="profile-img">
-            <p>Born and raised in Toronto, Canada, I'm a freelance web developer and Computer Science student at the University of Waterloo. Design and technology are two passions of mine, and I channel my enthusiasm for both through my work.</p>
-            <p>I'm proficient with HTML, CSS, Sass/SCSS, and JS/JQuery; experienced with Bootstrap, Racket/Scheme, and Photoshop; and familiar with C, SQL, PHP, Python, Swift, Illustrator, Dreamweaver, and InDesign. That said, I'm always eager to throw myself at new challenges, and dedicated to improving my skillset.</p>
-            <p>Aside from programming, music is a large part of my life, and I sing and play piano on top of listening to whatever songs capture my interest these days. I also write stories, read sci-fi novels, typeset notes in LaTeX, and play video games.</p>
-        </div>
-        <a href="#work" class="nav--arrow">v</a>
-    </section>
-    <section id="work" class="content__wrapper">
-        <div class="content">
-            <h1>Work</h1>
-            <div class="carousel">
-                <input type="radio" name="slide" id="slide1" checked>
-                <input type="radio" name="slide" id="slide2">
-                <input type="radio" name="slide" id="slide3">
-
-                <div class="carousel__slides-container">
-                    <div class="carousel__slides">
-                        {% for work in site.data.portfolio reversed %}
-                            {% if work.img_status == true %}
-                                <article class="slide">
-                                    <div class="slide__metadata">
-                                        <span>{% if work.live_status == true %}<a href="{{ work.url }}">{{ work.title }}</a>{% else %} {{ work.title}} {% endif %} &#124; {{ work.category }} &#124; {% if work.date_status == true %}{{ work.date | date: "%b %Y" }}{% else %}{{ work.approx_date }}{% endif %}</span>
-                                        <p class="slide__description">{{ work.description }}</p>
-                                        <p class="slide__description">{{ work.built_with }}</p>
-                                    </div>
-                                    <img src="assets/img/{{ work.img_name }}.png" class="slide__img">
-                                </article>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="carousel__controls--arrow">
-                    <label for="slide1"></label>
-                    <label for="slide2"></label>
-                    <label for="slide3"></label>
-                </div>
-            </div>
-
-            <div class="card__collection">
-                {% for work in site.data.portfolio %}
-                <article class="card">
-                    <div class="card__content">
-                        <h2 class="card__title">{{ work.title }}</h2>
-                        <h3 class="card__metadata">{{ work.category }} &#124; {% if work.date_status == true %}{{ work.date | date: "%B %Y" }}{% else %}{{ work.approx_date }}{% endif %}</h3>
-                        <p>{{ work.description }}</p>
-                        <p>{{ work.built_with }}</p>
-                    </div>
-                    {% if work.live_status == true %}<a href="{{ work.url }}" class="card__status live-preview">Live Preview</a>{% else %}<span class="card__status">Live Preview Coming Soon!</span>{% endif %}
-                </article>
-                {% endfor %}
-            </div>
-        </div>
-        <a href="#projects" class="nav--arrow">v</a>
-    </section>
-    <section id="projects" class="content__wrapper">
-        <div class="content">
-            <h1>Projects</h1>
-            <p>In addition to my web design work, I also run a few other side projects. Take a look!</p>
-            {% for project in site.data.projects %}
-            <a href="{{ project.url }}">
-                <article class="tile">
-                    <h2 class="tile__title">{{ project.title }}</h2>
-                </article>
-            </a>
-            {% endfor %}
-        </div>
-        <a href="#contact" class="nav--arrow">v</a>
-    </section>
-    {% include footer.html %}
-</main>
+    </div>
+</section>
+<section class="section section--landing" id="contact">
+    <h1 class="section__title">Get in Touch.</h1>
+    <div class="section__content">
+        <p>Interested in knowing more about me? <a href="assets/files/resume.pdf">Check out my resume</a>, and see what I can do for you!
+            You can also find me on <a href="//github.com/{{ site.social_media_username }}">GitHub</a> and
+            <a href="//linkedin.com/in/{{ site.social_media_username }}">LinkedIn</a>.</p>
+        <p>Or, if you want to talk, then don't hesitate to <a href="mailto:{{ site.social_media_username }}@gmail.com">send me an email</a>!
+            I'd love to hear from you.</p>
+    </div>
+</section>

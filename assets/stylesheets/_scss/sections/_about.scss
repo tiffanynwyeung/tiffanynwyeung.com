@@ -1,24 +1,31 @@
 //
-// sections/about: specific styling for the about section.
+// sections/about: about page overrides.
 //
 
-.profile-img {
-    width: 16em;
-    height: 16em;
-    margin: 1em auto;
-    display: block;
-    float: none;
-    border: $primary-border;
+#about {
 
-    @media all and (min-width: $desktop-width-media) {
-        margin: 1em 2em 1em 0;
-        display: inline-block;
-        float: left;
-    }
+    &__img {
+        width: 8.75em;
+        height: 8.75em;
+        margin: 0;
+        display: block;
+        border-radius: 50%;
 
-    @media all and (min-width: 88.375em) {
-        width: 15em;
-        height: 15em;
-        margin-top: 0;
+        @media all and (min-width: $sm-mobile-width) {
+            width: 10em;
+            height: 10em;
+            margin: 0 auto;
+        }
+
+        @media all and (min-width: $md-mobile-width) {
+            margin: 0 1.5em 0.5em 0;
+            float: left;
+        }
+
+        @media all and (min-width: $tablet-size) {
+            width: 12.5em;
+            height: 12.5em;
+            margin: 0 2.5em 1em 0;
+        }
     }
 }

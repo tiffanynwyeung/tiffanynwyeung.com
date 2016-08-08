@@ -1,0 +1,26 @@
+//
+// modules/grid: a grid layout module.
+//
+
+.grid {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+
+    &__row {
+        @extend .grid;
+        list-style: none;
+
+        @media all and (min-width: $desktop-width) {
+            height: 14em;
+            margin: 2% 0;
+        }
+
+        &--portfolio {
+            height: auto;
+        }
+    }
+}

@@ -4,23 +4,28 @@
 
 %animation-settings {
     @include animation-fill-mode(forwards);
-    @include animation-timing-function(ease-in-out);
-    @include animation-play-state(paused);
+    @include animation-timing-function(cubic-bezier(0, 0.125, 0.625, 0.875));
+    @include animation-iteration-count(1);
+    @include animation-play-state(running);
 }
 
-%border {
-    width: 0;
-    height: 0;
-    position: absolute;
-    background: transparent;
-    @include animation-duration(0.4s);
+%animation--fadein {
+    opacity: 0;
+    @include animation-duration(0.75s);
     @extend %animation-settings;
 }
 
-%b-odd{
-    width: 2px;
+%animation--fadeindown {
+    @extend %animation--fadein;
+    @include animation-name(fade-in-down);
 }
 
-%b-even{
-    height: 2px;
+%animation--fadeindownsoft {
+    @extend %animation--fadein;
+    @include animation-name(fade-in-down-soft);
+}
+
+%animation--fadeinup {
+    @extend %animation--fadein;
+    @include animation-name(fade-in-up);
 }

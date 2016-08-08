@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<header>
+    <section class="nameplate">
+        <div class="nameplate__content">
+            <div class="nameplate__title">
+                {% include logo.html %}
+            </div>
+            <div class="nameplate__subtitle">
+                {% assign words = site.tagline | split: ' ' %}
+                {% for word in words %}
+                    <h2 class="subtitle--word{{ forloop.index }}">{{ word }}</h2>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</header>
+
+{{ content }}

@@ -1,0 +1,98 @@
+---
+# metadata
+layout: page
+type: project
+name: symphonythemes
+title: Symphony Themes
+subtitle: "A repository of Tumblr themes I've created, as part of my ongoing experiments with design."
+
+# navigation
+next: tydesigns
+next-title: TY Designs
+---
+
+<ul class="page-link__list section--project">
+    <li class="page-link">
+        <a href="http://symphonythemes.tumblr.com" class="page-link__button">View Project</a>
+    </li>
+</ul>
+<section class="section section--portfolio">
+    <h1 class="section__title">Portfolio.</h1>
+    <div class="section__content">
+        <div class="grid">
+            <ul class="grid__row grid__row--portfolio">
+                {% for tile in site.data.symphonythemes %}<li class="tile tile--portfolio">
+                    <a class="tile__item" href="http://symphonypreviews.tumblr.com/th{{ tile.id }}-{{ tile.name }}">
+                        <h2 class="tile__title">{{ tile.title }}</h2>
+                        {% if tile.preview %}<img src="/assets/img/symphonythemes/{{ tile.name }}.png" alt="Background preview image of this Tumblr theme." class="tile__img">{% endif %}
+                    </a>
+                </li>{% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <h1 class="section__title">Backstory.</h1>
+    <div class="section__content">
+        <p>About three years ago, I heavily used the social media platform Tumblr, but was intensely dissatisfied with the blog
+            themes I chose. At the time, I only had a basic understanding of HTML and CSS, so I strived to learn both. I spent a lot of time
+            going through code, and deliberately breaking it from the inside out in order to understand how each component
+            worked.</p>
+        <p>Then that summer, I decided to completely create my own theme. I wanted my site to represent me as how I was at the time,
+            but nothing I chose satisfied my requirements. So, I started hacking away at a lot of theme iterations.
+            Each was only slightly better than the last, yet dissatisfied me nevertheless. It wasn't until I stumbled upon a background picture
+            I particularly wanted to incorporate that I came up with the theme layout I wanted to use.</p>
+        <p>That process taught me about various concepts, such as design iteration, use cases, web accessibility, and web responsiveness.
+            Most of all, it helped me start thinking from a user's viewpoint, including their needs, wants, and limitations; how
+            they would interact with the site; and how I could address each of those while simultaneously conveying the feel of
+            my intended 'brand'.</p>
+        <p>When I finished my theme and released it, I was delighted not only by the numerous positive responses I received,
+            but the satisfaction from creating something like this. I wanted to go through the whole process again, and despite
+            iterating over the design over the course of the next year and adding more features, I still wanted to do something
+            <i>bigger</i>. So I created my theme blog <i>Symphony Themes</i>, with the full intention of creating various blog theme
+            designs for free use, as well as providing user support.</p>
+        <p>At some point, schoolwork became intense and I put theme-making on the backburner for a good year. When I came back to
+            <i>Symphony Themes</i> a year later, my design skills had improved dramatically, so I set about creating a new brand,
+            removing old themes, and reopened it in December 2015.</p>
+    </div>
+</section>
+<section class="section">
+    <h1 class="section__title">Design Process.</h1>
+    <div class="section__content">
+        <p>Generally, whenever I design a theme, the first thing I write down is the overall look and
+            feel of the theme. Since I strive to make each theme unique, it's a way for me to create
+            a sort of "brand" for each of them, detailing the overall look and feel that the theme should convey to users.
+             This was also the step in the process when I would decide on color schemes and other details,
+             including specific features I wanted to implement.</p>
+         <p>After this, I start iterating on designs, particularly layouts. This normally takes into account
+            numerous factors, such as mobile responsiveness, blog post functionality, and the necessary navigation
+            required from blog themes. A particular note is that most of the designs I create are
+            non-mobile-friendly, as many Tumblr users access the mobile version of the site through the native app on iOS or Android,
+            and most themes on the site default to a very specific mobile-friendly version that users can choose to override but
+            the vast majority tend not to. This repeats itself until I find a layout I'm comfortable with creating that
+            also addresses the necessary interface requirements. </p>
+        <p>At this point, I turn towards creating the theme in question, focusing on getting the general layout
+            mapped out in HTML and CSS. Then I start going through basic testing, and if the layout fails to hold up,
+            I re-enter the layout iteration process again until I'm satisfied. Afterwards, the rest of the site theme
+            is built, with placeholder content added throughout the process to make sure things look alright.</p>
+        <p>Finally, I go through extensive manual testing to make sure everything is as it should be, as well as code checks
+            so I know that nothing within the code is functionally useless. If everything goes according to plan,
+            then finally it's time to publish!</p>
+    </div>
+</section>
+<section class="section">
+    <h1 class="section__title">Results.</h1>
+    <div class="section__content">
+        <p>Overall, <i>Symphony Themes</i> was the first step in my journey into design and programming. To this day,
+            it remains one of my favorite outlets whenever I'm frustrated or simply inspired to design
+            without needing to care particularly deeply about addressing specific problems one normally faces when
+            designing user interfaces. It's also a great testing grounds for new or unconventional layouts I would
+            never contemplate using for other projects, as well as learning new (or more efficient) methods
+            for implementing certain features with Javascript/jQuery.</p>
+        <p>Furthermore, <i>Symphony Themes</i> has gathered over 5000 downloads on all designs. I've seen themes I've made reach over
+            1000 downloads within the first week, and continue growing at steady rates months later.</p>
+        <p>Most of all, however, running this theme blog has taught me a lot about observing users, and gauging how
+            each design succeeds and fails with the target audience. I've learned how to go through a basic design
+            and development process, and think further about use cases, personas, and other core skills related to design overall.</p>
+    </div>
+</section>

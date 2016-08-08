@@ -6,35 +6,39 @@
 
 // ELEMENT CENTERING
 
-@mixin center-absolute{
+@mixin center-absolute {
     margin: 0 auto;
     position: absolute;
     left: 0;
     right: 0;
 }
 
-@mixin center-relative{
+@mixin center-relative {
     margin: 0 auto;
     position: relative;
 }
 
-// TEXT CENTERING
+// TEXT CENTERING/CASING
 
-@mixin center-allcaps{
+@mixin center-uppercase {
     text-align: center;
     text-transform: uppercase;
 }
 
+@mixin center-lowercase {
+    text-align: center;
+    text-transform: lowercase;
+}
 
 // VENDOR PREFIXING
 
 // GRADIENTS
 
-@mixin linear-gradient($gradient) {
-    background: -webkit-linear-gradient(#{$gradient});
-    background: -moz-linear-gradient(#{$gradient});
-    backrgound: -o-linear-gradient(#{$gradient});
-    background: linear-gradient(#{$gradient});
+@mixin linear-gradient($gradient...) {
+    background: -webkit-linear-gradient($gradient);
+    background: -moz-linear-gradient($gradient);
+    backrgound: -o-linear-gradient($gradient);
+    background: linear-gradient($gradient);
 }
 
 // TRANSITIONS AND TRANSFORMATIONS

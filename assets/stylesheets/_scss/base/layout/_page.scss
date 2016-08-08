@@ -1,0 +1,125 @@
+//
+// base/layout/page: for the default page layout.
+//
+
+
+// ---
+// PAGE DEFAULTS
+// ---
+
+header {
+    height: 75vh;
+    overflow-y: hidden;
+    background: color('blue', 'gunmetal');
+
+    @media all and (min-width: $md-mobile-width) {
+        height: 50vh;
+    }
+}
+
+.page {
+
+    &__title, &__subtitle {
+        text-align: center;
+    }
+
+    &__title {
+        font-size: $heading-3;
+
+        @media all and (min-width: $xl-mobile-width) {
+            padding-bottom: 0.25em;
+            font-size: $heading-2;
+        }
+
+        @media all and (min-width: $desktop-width) {
+            font-size: $heading-1;
+        }
+    }
+
+    &__subtitle {
+        padding: 0 1em;
+        margin-top: 0;
+        display: none;
+        font-size: $md-font-size;
+        font-weight: $hairline;
+        font-family: $body-font;
+        color: color('white', 'chrome');
+
+        @media all and (min-height: $sm-mobile-height) {
+            display: block;
+            font-size: $lg-font-size;
+        }
+
+        @media all and (min-width: $tablet-size) {
+            font-size: $heading-6;
+        }
+    }
+
+    &-link {
+        width: 0 auto;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+
+        &__list {
+            width: 80%;
+            height: auto;
+            padding: 1em 0;
+            margin: 0 auto;
+            position: relative;
+            display: block;
+            list-style: none;
+            text-align: center;
+
+            @media all and (min-width: $md-mobile-width) {
+                width: 75%;
+            }
+        }
+
+        &__button {
+            @extend a;
+            width: auto;
+            height: 1em;
+            padding: 0.5em;
+            margin: 0 auto;
+            display: inline-block;
+            border: 0.125em solid color('gold');
+            font-family: $title-font;
+            font-size: $heading-6;
+            line-height: $default-lh;
+            text-transform: lowercase;
+
+            &:hover, &:active {
+                border-color: color('gold', 'burnt');
+            }
+        }
+    }
+}
+
+.section {
+
+    &__title {
+        font-size: $heading-5;
+
+        @media all and (min-width: $xl-mobile-width) {
+            font-size: $heading-4;
+        }
+
+        @media all and (min-width: $tablet-size) {
+            font-size: $heading-3;
+        }
+
+        @media all and (min-width: $desktop-width) {
+            font-size: $heading-2;
+        }
+    }
+}
+
+// ---
+// MODIFIERS
+// ---
+
+.section--project {
+    text-align: center;
+}

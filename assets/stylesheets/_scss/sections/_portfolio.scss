@@ -1,0 +1,17 @@
+//
+// sections/symphonythemes: specific overrides for symphonythemes page.
+//
+
+@media all and (min-width: $tablet-size) {
+
+    .tile {
+
+        &.__item {
+            background: transparent;
+        }
+
+        &__item::after {
+            display: block;
+        }
+    }
+}
