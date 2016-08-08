@@ -1,0 +1,45 @@
+/// =====
+/// modules/animations/header
+/// animations for landing page header.
+/// =====
+
+$logo-delay: 575;
+$subtitle-delay: 1500;
+
+header {
+  animation-duration: 550ms;
+}
+
+.logo__fname,
+.logo__lname {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+@each $item in $logo-list {
+  .logo__#{$item} {
+    @extend %animationfadein--down;
+    animation-delay: #{$logo-delay}ms;
+  }
+
+  $logo-delay: $logo-delay + 475;
+}
+
+@media all and (min-height: $lg-mobile-height), (min-width: $xl-mobile-width) {
+
+  .subtitle {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
+@for $i from 1 through 3 {
+  .subtitle {
+    &--word#{$i} {
+      @extend %animationfadein--down;
+      animation-delay: #{$subtitle-delay}ms;
+    }
+  }
+
+  $subtitle-delay: $subtitle-delay + 475;
+}

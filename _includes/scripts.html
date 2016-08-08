@@ -1,3 +1,4 @@
-    <!-- scripts -->
-    {% if page.title == "Index" %}<script src="//code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="assets/scripts/landing.js"></script>{% endif %}
+{% if page.type == 'project' %}
+  <!-- scripts -->
+  <script defer src="/assets/scripts/project.js"></script>
+{% endif %}

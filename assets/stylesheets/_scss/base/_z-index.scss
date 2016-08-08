@@ -1,18 +1,18 @@
-//
-// base/z-index: default site element z-indexes.
-//
+/// =====
+/// base/z-index
+/// default site element z-indexes.
+/// =====
 
-$z-layers: (
-    'base': 1,
-    'second-topmost': 99,
-    'topmost': 999,
+$z-layers-data: (
+  'base': 1,
+  'second': 2,
+  'third': 3,
 );
 
-// FUNCTIONS
-@function z($key) {
-    @if map-has-key($z-layers, $key){
-        @return map-get($z-layers, $key)
-    }
-    @warn "Unknown `#{$key}` in $z-layers.";
-    @return null;
+@function z-index($key: base) {
+  @if map-has-key($z-layers-data, $key){
+    @return map-get($z-layers-data, $key);
+  } @else {
+    @error "Unknown `#{$key}` in $z-layers-data.";
+  }
 }

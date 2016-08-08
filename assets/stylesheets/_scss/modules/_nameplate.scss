@@ -1,0 +1,136 @@
+/// =====
+/// modules/nameplate
+/// nameplate defaults.
+/// =====
+
+.nameplate {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  background: color('blue', 'dark');
+
+  @media all and (min-height: $sm-mobile-width) {
+    height: 80vh;
+    padding-top: 10vh;
+    margin-top: -10vh;
+    transform: skewY(3.5deg);
+  }
+
+  @media all and (min-height: $sm-mobile-height) {
+    height: 87.5vh;
+  }
+
+  &__content {
+    width: 82.5%;
+    height: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: 10%;
+
+    @media all and (min-height: $sm-mobile-width) {
+      top: 50%;
+      transform: skewY(-3.5deg) translateY(-62.5%);
+    }
+
+    @media all and (min-width: $xl-mobile-width) {
+      transform: skewY(-3.5deg) translateY(-50%);
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    left: 9%;
+
+    @media all and (min-width: $md-mobile-width) {
+      width: 82.5%;
+      left: 4%;
+    }
+
+    @media all and (min-width: $xl-mobile-width) {
+      margin: 0 0 0 auto;
+      left: -2.5%;
+    }
+
+    @media all and (min-width: $sm-desktop-width) {
+      width: 62.5%;
+      margin: 0 auto;
+      left: 1%;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    display: none;
+    font-family: $title-font;
+
+    @media all and (orientation: portrait) and (min-height: $sm-mobile-height + 3em) and (max-aspect-ratio: 80/137) {
+      width: 75%;
+      margin: 0 auto;
+      top: 0;
+      left: 0;
+      display: block;
+    }
+
+    @media all and (min-height: $md-mobile-height) and (max-width: $tablet-size), (min-width: $lg-mobile-width) and (max-width: $tablet-size) and (min-height: $sm-mobile-height) {
+      top: 0.5em;
+      left: 0.5em;
+      display: block;
+    }
+
+    @media all and (min-width: $tablet-size) and (max-width: $xs-desktop-width) and (min-height: $sm-mobile-height) {
+      width: 75%;
+      margin: 0 auto;
+      top: 2.5%;
+      left: -2.5%;
+      display: block;
+    }
+
+    @media all and (min-width: $xs-desktop-width) and (min-height: $sm-mobile-height + 2em) {
+      width: 60%;
+      margin: 0 auto;
+      top: 2.5%;
+      left: -6.25%;
+      display: block;
+    }
+  }
+}
+
+.subtitle {
+  padding: 0;
+  margin: 0;
+  font-size: $heading-6;
+  color: color('sky', 'light');
+  text-align: center;
+  text-transform: lowercase;
+
+  @media all and (min-width: $xl-mobile-width) {
+    display: block;
+  }
+
+  @media all and (min-width: $tablet-size) {
+    display: inline-block;
+
+    &--word1 {
+      margin-top: -1em;
+      position: absolute;
+      left: 2em;
+    }
+
+    &--word2 {
+      margin: 0 auto;
+    }
+
+    &--word3 {
+      margin: 1em auto 0 auto;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  @media all and (min-width: $sm-desktop-width) {
+    font-size: $heading-5;
+  }
+}

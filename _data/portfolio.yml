@@ -1,54 +1,15 @@
-- title: Cadenza
-  category: Design, Freelance
-  date_status: no
-  approx_date: July 2016
-  description: CADENZA is another portfolio site made for my good friend, David, and is intended to be simple and easy to navigate through.
-  built_with: Built with HTML, CSS, and JQuery.
-  live_status: no
-  url: //david.lu
-  img_status: no
-  img_name: cadenza
+- name: symphonythemes
+  title: Symphony Themes
+  desc: A repository of Tumblr themes created for public use.
 
-- title: Flock
-  category: Design, Freelance
-  date_status: yes
-  date: 2016-03-05
-  description: FLOCK is a quick site UI made to showcase a hackathon "cloud computing" product created by a friend. Using a clean interface, it quickly lets the user know all the details about the product, and uses a sky-inspired palette to tie in with the bird and cloud theming of the product itself.
-  built_with: Built with HTML, CSS, and JQuery.
-  live_status: no
-  url: //flock.org
-  img_status: no
-  img_name: flock
+- name: tydesigns
+  title: TY Designs
+  desc: A collection of sites I built as a freelance web designer.
 
-- title: Aria
-  category: Freelance
-  date_status: yes
-  date: 2016-01-16
-  description: ARIA is a portfolio site that is deliberately simplistic with a restrained palette in order to highlight what's most important. Made for a friend who desperately needed a portfolio site, I quickly built it within five hours in order to satisfy the time constraints in place at the time.
-  built_with: Built with HTML, CSS, and JQuery.
-  live_status: no
-  url: /portfolio/aria/
-  img_status: no
-  img_name: aria
+- name: gogogo
+  title: Go Go Go
+  desc: The board game Go, as a multiplayer web app. Written in Go and React.
 
-- title: Pianoforte
-  category: Design, Freelance
-  date_status: no
-  approx_date: Dec 2015
-  description: Redesigned in 2016 for a cleaner, more effective layout, PIANOFORTE is a lightweight, balanced site theme. It's also the front page for one of my ongoing freelance design projects, Symphony Themes, where I experiment with design and create blog themes for the social media platform Tumblr.
-  built_with: Built with HTML, CSS, and JQuery.
-  live_status: yes
-  url: //symphonythemes.tumblr.com/index
-  img_status: yes
-  img_name: pianoforte
-
-- title: Notturno
-  category: Design
-  date_status: yes
-  date: 2014-08-18
-  description: A modern, sophisticated dark theme, NOTTURNO was built as an exploration into dark design principles and website design in general.
-  built_with: Built with HTML, CSS, and JQuery.
-  live_status: yes
-  url: //notturno-theme.tumblr.com
-  img_status: yes
-  img_name: notturno
+- name: rememberwhen
+  title: Remember When
+  desc: A Rails app dedicated to sharing memories within friend groups.

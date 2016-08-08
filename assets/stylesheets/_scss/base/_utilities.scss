@@ -1,0 +1,29 @@
+/// =====
+/// base/variables
+/// all global variables.
+/// =====
+
+// TRANSITIONS
+$default-transition: all 375ms ease-in-out;
+
+// MEDIA QUERIES
+$sm-mobile-width: 20em; // 320px
+$md-mobile-width: 25em; // 400px
+$lg-mobile-width: 31.25em; // 500px
+$xl-mobile-width: 37.5em; // 600px
+$tablet-size: 48em; // 768px
+
+$sm-mobile-height: 31.25em; // 500px
+$md-mobile-height: 37.5em; // 600px
+$lg-mobile-height: 43.75em; // 700px
+$desktop-height: 46.875em; // 750px
+
+$xs-desktop-width: 56.25em; // 900px
+$sm-desktop-width: 68.75em; // 1100px
+$md-desktop-width: 87.5em; // 1400px
+
+// VARIABLE LISTS
+$logo-list: (
+  'fname',
+  'lname'
+);

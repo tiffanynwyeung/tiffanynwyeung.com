@@ -1,0 +1,32 @@
+/// =====
+/// base/typography/icons
+/// standard icon styles.
+/// =====
+
+.icon {
+  &--media, &--nav {
+    font-size: $heading-5;
+  }
+
+  &--media {
+    color: color('sky');
+    transition: $default-transition;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: color('white');
+      transition: $default-transition;
+    }
+  }
+
+  &--nav {
+    line-height: $default-lh / 2;
+    margin-top: -1px;
+  }
+
+  &__desc {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}

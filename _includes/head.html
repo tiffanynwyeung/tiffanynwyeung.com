@@ -1,17 +1,33 @@
 <head>
-    <title>{% if page.title == "Index" %}{{ site.name }}{% else %}{{ page.title }} &#124; {{ site.name }}{% endif %}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>{% if page.type != 'landing' %}{{ page.title }} &#124; {% endif %}{{ site.title }}</title>
 
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% else %}<meta name="description" content="Tiffany Yeung is a freelance web developer and Computer Science student at the University of Waterloo, always eager to grow, learn, and build.">{% endif %}
+  <meta name="keywords" content="{{ site.keywords }}">
 
-    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% else %}<meta name="keywords" content="Tiffany, Yeung, university, waterloo, uwaterloo, cs, computer, science, software, web, design, development, ui, ux, blog">{% endif %}
+  {% seo title=false %}
 
-    <link href="assets/img/favicon.png" rel="icon" type="image/png">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
-    <link href='//fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-    {% if page.title == "Index" %}<link href="assets/stylesheets/landing.css" rel="stylesheet">{% else %}<link href="assets/stylesheets/global.css" rel="stylesheet">{% endif %}
+  <link rel="preload" as="font" type="font/woff" href="/assets/fonts/questrial/questrial-regular.woff" crossorigin>
+  <link rel="preload" as="font" type="font/woff" href="/assets/fonts/roboto/roboto-light.woff" crossorigin>
+
+  <style>
+    {% capture fonts %}
+      {% include scss/fonts.scss %}
+    {% endcapture %}
+    {{ fonts | scssify }}
+    {% capture atf %}
+      {% if page.type == 'landing' %}
+        {% include scss/atf-landing.scss %}
+      {% else %}
+        {% include scss/atf-page.scss %}
+      {% endif %}
+    {% endcapture %}
+    {{ atf | scssify }}
+  </style>
+
+  <link href="/assets/stylesheets/{% if page.type == 'landing' %}landing{% else %}page{% endif %}.css" rel="stylesheet">
 </head>

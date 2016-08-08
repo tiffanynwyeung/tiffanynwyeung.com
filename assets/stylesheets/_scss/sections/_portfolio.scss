@@ -1,0 +1,18 @@
+/// =====
+/// sections/portfolio
+/// @page
+/// =====
+
+@media all and (min-width: $tablet-size) {
+  .mobile-only {
+    display: none;
+  }
+
+  .tile {
+    background: transparent;
+
+    &::after {
+      display: block;
+    }
+  }
+}

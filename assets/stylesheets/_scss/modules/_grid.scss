@@ -1,0 +1,48 @@
+/// =====
+/// modules/grid
+/// for creating grid layouts.
+/// =====
+
+.grid {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  list-style: none;
+
+  @media all and (min-width: $sm-desktop-width) {
+    margin: 2.5% 0;
+  }
+
+  &__item {
+    width: 95%;
+    margin: 2.5% auto;
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    @media all and (min-width: $xl-mobile-width) {
+      width: 98%;
+      margin: 1%;
+    }
+
+    @media all and (min-width: $sm-desktop-width) {
+      width: 48%;
+      margin: 0 1% 1% 1%;
+      display: inline-block;
+    }
+
+    &--md {
+      @media all and (min-width: $sm-desktop-width) {
+        height: 14em;
+      }
+    }
+
+    &--sm {
+      @media all and (min-width: $sm-desktop-width) {
+        height: 10em;
+      }
+    }
+  }
+}

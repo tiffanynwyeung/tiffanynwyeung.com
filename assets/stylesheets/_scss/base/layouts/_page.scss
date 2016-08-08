@@ -1,30 +1,49 @@
-//
-// base/layouts/page: specific page layout declarations.
-//
+/// =====
+/// base/layout/page
+/// for the default page layout.
+/// =====
 
 main {
-    background: color('black', 'onyx');
+  width: 100%;
+  margin-bottom: 2.5%;
+
+  @media all and (min-width: $sm-mobile-width) and (min-height: $md-mobile-height) and (orientation: portrait) and (max-aspect-ratio: 1/1) {
+    min-height: 50vh;
+  }
+
+  @media all and (min-width: $md-mobile-width) {
+    width: 90%;
+  }
+
+  @media all and (min-width: $xl-mobile-width) {
+    width: 62.5%;
+  }
+
+  @media all and (min-width: $md-desktop-width) {
+    width: 50%;
+  }
 }
 
-.content {
-    text-align: left;
+.section {
+  width: 80%;
 
-    h2 {
-        margin: 0;
-        font-weight: $light;
-        text-align: left;
+  @media all and (min-width: $xl-mobile-width) {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: $heading-5;
+
+    @media all and (min-width: $xl-mobile-width) {
+      font-size: $heading-4;
     }
 
-    ul {
-        padding: 0 0 0 2.5em;
-        margin: 1em auto;
-        font-size: $heading-7;
-        line-height: $lh-1;
+    @media all and (min-width: $tablet-size) {
+      font-size: $heading-3;
     }
 
-    @media all and (min-width: $large-mobile-width) {
-        width: 75%;
-        padding-top: 8em;
-        position: relative;
+    @media all and (min-width: $sm-desktop-width) {
+      font-size: $heading-2;
     }
+  }
 }

@@ -1,0 +1,11 @@
+/// =====
+/// modules/animations/page
+/// default page animations.
+/// =====
+
+main {
+  will-change: transform;
+  transform: translateZ(0);
+  @extend %animationfadein--downsoft;
+  animation-delay: 375ms;
+}
