@@ -1,0 +1,38 @@
+////
+/// All animation-related utilities live here.
+/// @group components, @group animations
+////
+
+%animation-settings {
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0, 0.125, 0.25, 0.875);
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+%animation-fade-in {
+  &--default,
+  &--up,
+  &--left,
+  &--right {
+    opacity: 0;
+    animation-duration: 450ms;
+    @extend %animation-settings;
+  }
+
+  &--default {
+    animation-name: fade-in;
+  }
+
+  &--up {
+    animation-name: fade-in-up;
+  }
+
+  &--left {
+    animation-name: fade-in-left;
+  }
+
+  &--right {
+    animation-name: fade-in-right;
+  }
+}

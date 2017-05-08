@@ -1,0 +1,58 @@
+////
+/// All animation declarations live here.
+/// @group components, @group animations
+////
+
+.nameplate__logo,
+.nameplate__title,
+.nameplate__heading,
+.nameplate__links,
+.img--about,
+.ui-section,
+.ui-footer {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.ui-footer,
+.nameplate__logo,
+.img--about {
+  animation-delay: 125ms;
+}
+
+.ui-footer {
+  @extend %animation-fade-in--up;
+}
+
+.nameplate__logo,
+.img--about {
+  @extend %animation-fade-in--left;
+}
+
+.ui-section,
+.nameplate__title,
+.nameplate__heading,
+.nameplate__links {
+  @extend %animation-fade-in--right;
+}
+
+.nameplate__title {
+  animation-delay: 350ms;
+}
+
+.ui-section,
+.nameplate__heading {
+  animation-delay: 450ms;
+
+  @media (min-width: breakpoint('sm')) {
+    animation-delay: 350ms;
+  }
+}
+
+.nameplate__links {
+  animation-delay: 650ms;
+
+  @media (min-width: breakpoint('sm')) {
+    animation-delay: 500ms;
+  }
+}

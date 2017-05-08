@@ -1,27 +1,11 @@
-/// =====
-/// Above-the-fold SCSS
-/// @landing
-/// =====
+////
+/// Default "above-the-fold" stylesheet for landing (default).
+/// @for landing
+////
 
 /// Utilities
+@import 'base/breakpoints';
 @import 'base/colors';
 @import 'base/typography/definitions';
 @import 'base/z-index';
 @import 'base/utilities';
-
-/// Foundation styles
-@import 'base/normalize';
-@import 'base/foundation';
-@import 'base/typography/typography';
-@import 'base/layouts/default';
-@import 'base/layouts/landing';
-
-/// Components
-@import 'modules/header/default';
-@import 'modules/header/landing';
-@import 'modules/logo';
-@import 'modules/nameplate';
-@import 'modules/animations/settings/extends';
-@import 'modules/animations/settings/keyframes';
-@import 'modules/animations/default';
-@import 'modules/animations/header';

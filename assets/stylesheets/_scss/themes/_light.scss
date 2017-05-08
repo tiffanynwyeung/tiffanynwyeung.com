@@ -1,0 +1,14 @@
+////
+/// Special styles for the light theme live here.
+/// @group themes
+////
+
+.th--light {
+  background: color('sky', 'lightest');
+  color: color('ink', 'light');
+
+  ::selection {
+    background: color('red', 'dark');
+    color: color('sky', 'lightest');
+  }
+}

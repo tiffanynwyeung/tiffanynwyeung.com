@@ -1,0 +1,35 @@
+////
+/// Default UI layout component styles live here.
+/// @group components, @layout default
+////
+
+.ui-layout {
+  width: 100%;
+  height: auto;
+  min-height: 90vh;
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @media (min-width: breakpoint()) and (min-height: breakpoint('xxs')) {
+    height: 95vh;
+    min-height: 95vh;
+  }
+}
+
+.ui-layout__item {
+  width: 82.5%;
+  height: 82.5%;
+  margin: 12.5% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: breakpoint()) {
+    width: 75%;
+    height: 75%;
+  }
+}

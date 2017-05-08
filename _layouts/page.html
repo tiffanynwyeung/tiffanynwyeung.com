@@ -2,31 +2,8 @@
 layout: default
 ---
 
-{{ content }}
-{% if page.type != 'error' %}
-  <ul class="btn-group btn-group--scroll">
-    <li class="btn-group__item">
-      <a href="/work/{{ page.name }}" class="btn btn--scroll">Back to Top</a>
-    </li>
-  </ul>
-  <nav class="nav nav--mobile">
-    <ul>
-      <li class="nav__item nav__item--left nav__item--mobile">
-        {% if page.previous %}
-          <a class="nav__link nav__link--mobile" href="/work/{{ page.previous }}" title="{{ page.previous-title }}">
-            <span class="genericon genericon-previous icon--nav" aria-hidden="true"></span>
-            <span>{{ page.previous-title }}</span>
-          </a>
-        {% endif %}
-      </li>
-      <li class="nav__item nav__item--right nav__item--mobile">
-        {% if page.next %}
-          <a class="nav__link nav__link--mobile" href="/work/{{ page.next }}" title="{{ page.next-title }}">
-            <span>{{ page.next-title }}</span>
-            <span class="genericon genericon-next icon--nav" aria-hidden="true"></span>
-          </a>
-        {% endif %}
-      </li>
-    </ul>
-  </nav>
-{% endif %}
+<section class="ui-layout" {% if page.id %}id="about"{% endif %}>
+  <div class="ui-layout__item">
+    {{ content }}
+  </div>
+</section>

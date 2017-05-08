@@ -1,0 +1,20 @@
+////
+/// Default UI section layout component styles live here.
+/// @group components, @layout default
+////
+
+.ui-section {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.ui-section__content {
+  @include type-body;
+
+  width: 100%;
+
+  @media (min-width: breakpoint('xl')) and (min-height: breakpoint('xxs')) {
+    max-width: 30em;
+  }
+}

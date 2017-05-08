@@ -1,35 +1,138 @@
-/// =====
-/// base/typography/definitions
-/// SCSS typography definitions.
-/// =====
+////
+/// All variable, function, and mixin declarations for typography live here.
+/// @group typography, @group utilities
+////
 
-// FAMILIES
-$default-font: -apple-system, 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-$body-font: 'Roboto', sans-serif;
-$title-font: 'Questrial', $body-font;
+///
+/// Variable: font weights
+/// Syntax: $fw-[weight]
 
-// SIZES
-$default-font-size: 100%;                       // 16px
+$fw-light: 300;
+$fw-regular: 400;
 
-$lg-font-size: $default-font-size * 1.25;       // 125%/20px
-$md-font-size: $default-font-size * 1.125;      // 112.5%/18px
-$sm-font-size: $default-font-size * 0.9375;     // 93.75%/15px
 
-$heading-1: $default-font-size * 4;             // 400%/64px
-$heading-2: $default-font-size * 3;             // 300%/48px
-$heading-3: $default-font-size * 2.5;           // 250%/40px
-$heading-4: $default-font-size * 2.25;          // 225%/36px
-$heading-5: $default-font-size * 2;             // 200%/32px
-$heading-6: $default-font-size * 1.5;           // 150%/24px
+$font-family-data: (
+  'default': #{ "-apple-system, 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif" },
+  'body': #{ "'Roboto', 'Helvetica Neue', sans-serif" },
+  'title': #{ "'Questrial', 'Roboto', sans-serif" }
+);
 
-// SPACING
-$default-lh: 100%;
-$body-lh: $default-lh * 1.625;                  // 162.5%
+///
+/// Returns a font-family declaration given the associated name.
+/// @param {String} $variant [default] - the family name. Defaults to 'default'.
+/// @returns {String} - the desired font family declaration.
 
-$lh-1: $default-lh * 1.5;                       // 150%
-$lh-2: $default-lh * 1.25;                      // 125%
-$lh-3: $default-lh * 1.1;                       // 110%
+@function ff($variant: 'default') {
+  @if map-has-key($font-family-data, $variant) {
+    @return map-get($font-family-data, $variant);
+  } @else {
+    @error "#{$variant} does not exist in font family data.";
+  }
+}
 
-// WEIGHTS
-$light: 300;
-$regular: 400;
+
+$line-height-data: (
+  'tightest': 1,
+  'tighter': 1.1,
+  'tight': 1.25,
+  'base': 1.5,
+);
+
+///
+/// Returns a line-height given the associated name.
+/// @param {String} $variant [base] - the variant name. Defaults to 'base'.
+/// @returns {Number} - the desired line-height.
+
+@function lh($variant: 'base') {
+  @if map-has-key($line-height-data, $variant) {
+    @return map-get($line-height-data, $variant);
+  } @else {
+    @error "#{$variant} does not exist in line height data.";
+  }
+}
+
+
+///
+/// Mixin: type-small
+/// Default text styles for smaller texr
+
+@mixin type-small {
+  font-size: 0.625rem;
+  line-height: lh();
+
+  @media (min-width: breakpoint('xl')) {
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: breakpoint('xxl')) {
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: brekapoint('xxxxl')) {
+    font-size: 0.9375rem;
+  }
+}
+
+///
+/// Mixin: type-body
+/// Default body typography style
+
+@mixin type-body {
+  font-size: 0.875rem;
+  line-height: lh();
+
+  @media (min-width: breakpoint('xs')) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: breakpoint('xl')) {
+    font-size: 1.125rem;
+  }
+
+  @media (min-width: breakpoint('xxxxl')) {
+    font-size: 1.25rem;
+  }
+}
+
+///
+/// Mixin: type-title
+/// Default title styles
+
+@mixin type-title {
+  font-size: 1.75rem;
+  line-height: lh('tight');
+
+  @media (min-width: breakpoint('sm')) {
+    font-size: 2rem;
+  }
+
+  @media (min-width: breakpoint('xl')) {
+    font-size: 2.25rem;
+  }
+
+  @media (min-width: breakpoint('xxl')) {
+    font-size: 2.5rem;
+  }
+}
+
+///
+/// Mixin: type-link-alt
+/// Alternative type styles for links
+
+@mixin type-link-alt($border-breakpoint: true, $border-width-breakpoint: breakpoint('sm')) {
+  padding-bottom: 0.125em;
+  border-bottom: 1px solid transparent;
+  text-transform: uppercase;
+
+  @if $border-breakpoint {
+    @media (min-width: $border-width-breakpoint) {
+      border-bottom-width: 2px;
+    }
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    padding-bottom: 0.375em;
+  }
+}

@@ -1,0 +1,39 @@
+////
+/// Style overrides and "snowflake" element styles for the about page live here.
+/// @group overrides
+////
+
+.img--about {
+  @include type-title;
+  display: none;
+  border-radius: 2px;
+
+  @media (min-width: breakpoint('sm')) and (min-height: breakpoint('xxs')) {
+    width: auto;
+    height: auto;
+    max-width: 40%;
+    max-height: 100%;
+    display: block;
+    margin-right: 1.125em;
+  }
+
+  @media (min-width: breakpoint('xxl')) and (min-height: breakpoint('xxs')) {
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+
+.th--light {
+  .img--about {
+    filter: saturate(90%) opacity(45%);
+  }
+}
+
+
+.th--dark {
+  .img--about {
+    filter: saturate(20%) opacity(30%);
+  }
+}

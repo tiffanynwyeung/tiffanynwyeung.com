@@ -1,41 +1,146 @@
-/// =====
-/// base/typography/typography
-/// default typography styles.
-/// =====
+////
+/// All default styles for standard typography elements live here.
+/// @group typography
+////
+
+p,
+h1,
+h2 {
+  margin: 0 0 1em 0;
+}
+
+h1,
+h2 {
+  // Chrome fix for extra font bolding
+  font-weight: $fw-regular;
+}
+
+
+///
+/// Basic text elements
+
+p {
+  @include type-body;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+
+a {
+  padding-bottom: 1px;
+  display: inline;
+  border-bottom: 1px solid;
+  font-weight: $fw-regular;
+  text-decoration: none;
+  transition: $default-transition;
+
+  @media (min-width: breakpoint()) {
+    border-bottom-width: 2px;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    transition: $default-transition;
+  }
+}
+
+
+///
+/// Headings
 
 h1 {
-  padding: 0.375em;
-  margin: 0;
-  font: $regular #{$heading-5}/#{$lh-3} $title-font;
-  color: color('gold', 'dark');
+  padding: 0;
+  font-size: 0.9375rem;
+  line-height: lh('tightest');
+  letter-spacing: 0.0714em;
+  text-transform: uppercase;
 
-  @media all and (min-width: $md-mobile-width) {
-    font-size: $heading-3;
+  @media (min-width: breakpoint('xs')) {
+    font-size: 1.125rem;
   }
 
-  @media all and (min-width: $tablet-size) {
-    font-size: $heading-2;
-  }
-
-  @media all and (min-width: $sm-desktop-width) {
-    font-size: $heading-1;
+  @media (min-width: breakpoint('sm')) and (min-height: breakpoint('xxs')) {
+    display: none;
   }
 }
 
 h2 {
-  margin: 1em auto;
-  font: $regular #{$heading-6}/#{$lh-1} $title-font;
+  @include type-title;
 
-  @media all and (min-width: $sm-desktop-width) {
-    font-size: $heading-5;
+  font-family: ff('title');
+}
+
+.type-headline {
+  @media (min-width: breakpoint('xl')) and (min-height: breakpoint('xxs')) {
+    display: block;
+  }
+
+  &__top {
+    position: relative;
+    left: 0;
+
+    @media (min-width: breakpoint('xl')) and (min-height: breakpoint('xxs')) {
+      left: -2em;
+    }
   }
 }
 
 h3 {
-  margin: 0;
-  font: $regular #{$md-font-size}/#{$lh-2} $title-font;
+  font-family: ff('title');
+  display: block;
+}
 
-  @media all and (min-width: $sm-desktop-width) {
-    font-size: $heading-6;
+
+.th--light {
+  h1 {
+    color: color('ink', 'light');
+  }
+
+  h2 {
+    color: color('ink');
+  }
+
+  p > a {
+    color: color('red');
+    border-bottom-color: color('red');
+  }
+
+  .type-headline--highlight {
+    color: color('red');
+  }
+
+  .nameplate__heading > .type-headline--highlight {
+    @media (min-width: breakpoint('sm')) {
+      color: color('ink');
+    }
+  }
+}
+
+
+.th--dark {
+  h1 {
+    color: color('sky');
+  }
+
+  h2 {
+    color: color('sky', 'light');
+  }
+
+  p > a {
+    color: color('gold');
+    border-bottom-color: color('gold');
+  }
+
+  .type-headline--highlight {
+    color: color('gold');
+  }
+
+  .nameplate__heading > .type-headline--highlight {
+    @media (min-width: breakpoint('sm')) {
+      color: color('sky', 'light');
+    }
   }
 }

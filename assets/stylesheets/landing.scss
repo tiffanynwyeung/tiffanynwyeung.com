@@ -3,27 +3,34 @@
 ---
 
 /// Utilities
+@import 'base/breakpoints';
 @import 'base/colors';
 @import 'base/typography/definitions';
 @import 'base/z-index';
 @import 'base/utilities';
 
-/// Fonts
-@import 'fonts/roboto';
-@import 'fonts/genericons';
-
 /// Foundation styles
-@import 'base/typography/icons';
+@import 'base/normalize';
+@import 'base/foundation';
+@import 'base/typography/typography';
+
+/// Animations
+@import 'components/animations/utilities';
+@import 'components/animations/keyframes';
+@import 'components/animations/animations';
 
 /// Components
-@import 'modules/footer';
-@import 'modules/grid';
-@import 'modules/tile/default';
-@import 'modules/tile/landing';
-@import 'modules/animations/settings/extends';
-@import 'modules/animations/settings/keyframes';
-@import 'modules/animations/default';
-@import 'modules/animations/landing';
+@import 'components/layout/layout';
+@import 'components/layout/section';
+@import 'components/footer';
 
 /// Overrides
-@import 'sections/about';
+@import 'overrides/about';
+
+/// Themes
+@import 'themes/light';
+@import 'themes/dark';
+
+/// Landing-specific components
+@import 'components/logo';
+@import 'components/snowflake/nameplate';
