@@ -1,0 +1,53 @@
+////
+/// Style overrides and "snowflake" element styles for the about section in landing live here.
+/// @page landing, @group overrides
+////
+
+#about {
+  .ui-layout__item {
+    max-width: 75rem;
+    max-height: 40rem;
+  }
+  
+  .ui-section__content {
+    @include layout-desktop(breakpoint('xl')) {
+      max-width: 30em;
+    }
+  }
+}
+
+.img--about {
+  @include type-heading;
+
+  display: none;
+  border-radius: 2px;
+
+  @include layout-desktop(breakpoint('sm')) {
+    width: auto;
+    height: auto;
+    max-width: 40%;
+    max-height: 100%;
+    display: block;
+    margin-right: 1.125em;
+  }
+
+  @include layout-desktop(breakpoint('xxl')) {
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+
+.th--light {
+  .img--about {
+    filter: saturate(90%) opacity(45%);
+  }
+}
+
+
+.th--dark {
+  .img--about {
+    filter: saturate(20%) opacity(30%);
+  }
+}

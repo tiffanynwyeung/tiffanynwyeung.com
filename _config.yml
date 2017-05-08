@@ -1,23 +1,40 @@
-#
-# Configuration
-#
+###
+## Configuration
+###
 
-gems:
- - jekyll-sitemap
+plugins:
+  - jekyll-autoprefixer
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-# site setup
-name: Tiffany Yeung
-description: Freelance web developer and Computer Science student studying at the University of Waterloo.
-tagline: Developer & designer aspiring for expression through code.
-url: http://tiffanynwyeung.co
+# Site Info
+title: Tiffany Yeung
+description: Tiffany Yeung is a freelance web developer and Computer Science student at the University of Waterloo, always eager to grow, learn, create, and build.
+
+keywords: tiffany,yeung,designer,developer,writer,blogger,hire,freelance,web,design,development,dev,user,interface,experience,ui,ux,interaction,portfolio,linkedin,github,medium,blog,dribble,dribbble,adobe,sketch,illustration,animation,graphic,creative,art,visual,university,waterloo,uwaterloo,cs,computer,science,software
+
+url: https://tiffanynwyeung.com
 baseurl: ""
 
-# assets
+# Site Content
+logo: /assets/img/favicon.png
+tagline: Designer & Developer.
+
+# Collections
+collections_dir: _content
+collections: 
+  - landing
+
+# Assets
 sass:
  sass_dir: assets/stylesheets/_scss
  style: :compressed
 
-# outside links
-social_media_username: tiffanynwyeung
-repo: https://github.com/tiffanynwyeung/tiffanynwyeung.github.io
-google_analytics: UA-72274516-1
+autoprefixer:
+  browsers:
+    - last 5 versions
+
+# Other
+username: tiffanynwyeung
+analytics: UA-72274516-1
+google_site_verification: J_838pJ1ZyEqHVPx1U1q2WtzDRecA5cz7V6UVkUCf2c

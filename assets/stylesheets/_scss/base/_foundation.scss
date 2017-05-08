@@ -1,58 +1,29 @@
-/// =====
-/// base/foundation
-/// default styles for standard HTML elements.
-/// =====
+////
+/// Standard HTML element styles live here.
+/// @group foundation
+////
 
 html {
-  font-family: $default-font;
+  font-family: ff();
+  box-sizing: border-box;
 }
 
-html, body {
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
-  background: color('sky', 'lighter');
   border: 0;
-  font: $light #{$default-font-size}/#{$body-lh} $body-font;
-  color: color('black');
-  word-break: break-word;
+  font: $fw-light 100%/#{lh()} ff('body');
+  word-wrap: break-word;
   vertical-align: baseline;
-}
-
-p {
-  margin: 1.5em 0;
-  font-size: $default-font-size;
-  line-height: $body-lh;
-
-  @media all and (min-width: $tablet-size) {
-    font-size: $md-font-size;
-  }
-
-  @media all and (min-width: $sm-desktop-width) {
-    font-size: $lg-font-size;
-  }
 }
 
 ul {
   display: block;
-}
-
-a {
-  font-weight: $regular;
-  color: color('gold', 'dark');
-  text-decoration: none;
-  transition: $default-transition;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: color('gold', 'darker');
-    transition: $default-transition;
-  }
-}
-
-::selection {
-  background: color('blue');
-  color: color('sky', 'lighter');
 }

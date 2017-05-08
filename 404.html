@@ -1,13 +1,16 @@
 ---
-layout: page
+layout: error
 type: error
 
 title: 404
-heading: "Seems like this page doesn't exist."
+heading: 404 Page Not Found
+id: error404
 ---
 
-<section class="section">
-  <div class="section__content">
-    <p>Maybe you've taken a wrong turn somewhere. How about <a href="/">going back to the site</a> to try again from there?</p>
-  </div>
-</section>
+<header class="ui-section__header"  data-aos="fade-left" data-aos-delay="150">
+  <h1>{{ page.heading }}</h1>
+  <h2 class="type-headline">Seems like <span class="type-headline--highlight">this page doesn&rsquo;t exist.</span></h2>
+</header>
+<div class="ui-section__content"  data-aos="fade-left" data-aos-delay="200">
+  <p>How about going back to <a href="/" rel="index">the main site</a> and trying again from there?</p>
+</div>

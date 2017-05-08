@@ -1,35 +1,145 @@
-/// =====
-/// base/typography/definitions
-/// SCSS typography definitions.
-/// =====
+////
+/// All variable, function, and mixin declarations for typography live here.
+/// @group typography, @group utilities
+////
 
-// FAMILIES
-$default-font: -apple-system, 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-$body-font: 'Roboto', sans-serif;
-$title-font: 'Questrial', $body-font;
+///
+/// Variable: font weights
+/// Syntax: $fw-[weight]
 
-// SIZES
-$default-font-size: 100%;                       // 16px
+$fw-light: 300;
+$fw-regular: 400;
 
-$lg-font-size: $default-font-size * 1.25;       // 125%/20px
-$md-font-size: $default-font-size * 1.125;      // 112.5%/18px
-$sm-font-size: $default-font-size * 0.9375;     // 93.75%/15px
 
-$heading-1: $default-font-size * 4;             // 400%/64px
-$heading-2: $default-font-size * 3;             // 300%/48px
-$heading-3: $default-font-size * 2.5;           // 250%/40px
-$heading-4: $default-font-size * 2.25;          // 225%/36px
-$heading-5: $default-font-size * 2;             // 200%/32px
-$heading-6: $default-font-size * 1.5;           // 150%/24px
+$font-family-data: (
+  'default': unquote("-apple-system, 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif"),
+  'body': unquote("'Roboto', 'Helvetica Neue', sans-serif"),
+  'title': unquote("'Questrial', 'Roboto', sans-serif")
+);
 
-// SPACING
-$default-lh: 100%;
-$body-lh: $default-lh * 1.625;                  // 162.5%
+///
+/// Returns a font-family declaration given the associated name.
+/// @param {String} $variant [default] - the family name. Defaults to 'default'.
+/// @returns {String} - the desired font family declaration.
 
-$lh-1: $default-lh * 1.5;                       // 150%
-$lh-2: $default-lh * 1.25;                      // 125%
-$lh-3: $default-lh * 1.1;                       // 110%
+@function ff($variant: 'default') {
+  @return retrieve-map-value($font-family-data, "font-family data", $variant);
+}
 
-// WEIGHTS
-$light: 300;
-$regular: 400;
+
+$line-height-data: (
+  'tighter': 1,
+  'tight': 1.25,
+  'base': 1.5,
+  'loose': 1.625
+);
+
+///
+/// Returns a line-height given the associated name.
+/// @param {String} $variant [base] - the variant name. Defaults to 'base'.
+/// @returns {Number} - the desired line-height.
+
+@function lh($variant: 'base') {
+  @return retrieve-map-value($line-height-data, "line-height data", $variant);
+}
+
+
+///
+/// Default text styles for smaller text. Goes up by 1px.
+
+@mixin type-small {
+  font-size: 0.625rem;
+  line-height: lh('loose');
+
+  @media (min-width: breakpoint('xs')) {
+    font-size: 0.75rem;
+  }
+
+  @include layout-desktop(breakpoint('xxl')) {
+    font-size: 0.875rem;
+  }
+
+  @include layout-desktop(breakpoint('xxxl')) {
+    font-size: 1rem;
+  }
+}
+
+
+///
+/// Default body typography styles. Goes up by 2px.
+
+@mixin type-body {
+  font-size: 0.875rem;
+  line-height: lh('loose');
+
+  @media (min-width: breakpoint('xs')) {
+    font-size: 1rem;
+  }
+
+  @include layout-desktop(breakpoint('xl')) {
+    font-size: 1.125rem;
+  }
+
+  @include layout-desktop(breakpoint('xxl')) {
+    font-size: 1.25rem;
+  }
+}
+
+
+///
+/// Default heading styles. Goes up by 4px.
+
+@mixin type-heading {
+  font-size: 1.75rem;
+  line-height: lh('tight');
+
+  @include layout-desktop(breakpoint('sm')) {
+    font-size: 2rem;
+  }
+
+  @include layout-desktop(breakpoint('xl')) {
+    font-size: 2.25rem;
+  }
+
+  @include layout-desktop(breakpoint('xxl')) {
+    font-size: 2.5rem;
+  }
+}
+
+
+///
+/// Default title styles. Only for subheadings/mobile titles.
+
+@mixin type-title {
+  padding: 0;
+  font-size: 0.9375rem;
+  line-height: lh('tighter');
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  @media (min-width: breakpoint('xs')) {
+    font-size: 1.125rem;
+  }
+}
+
+
+///
+/// Alternative type styles for block-styled links. Only for nameplate.
+
+@mixin type-link-alt($border-breakpoint: true, $border-width-breakpoint: breakpoint('sm')) {
+  padding-bottom: 0.125em;
+  border-bottom: 0.05em solid transparent;
+  text-transform: uppercase;
+
+  @if $border-breakpoint {
+    @include layout-desktop($border-width-breakpoint) {
+      border-bottom-width: 0.1em;
+    }
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    padding-bottom: 0.375em;
+  }
+}

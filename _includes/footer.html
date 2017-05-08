@@ -1,25 +1,13 @@
-<footer>
-  <p>&copy; Tiffany Yeung <time>2016</time>&ndash;<time>2017</time>.</p>
-  <ul>
-    <li>
-      <address>
-        <a href="mailto:{{ site.username }}@gmail.com" title="Email" aria-label="Email">
-          <span class="genericon genericon-mail icon--media" aria-hidden="true"></span>
-          <span class="icon__desc">Email</span>
-        </a>
-      </address>
-    </li>
-    <li>
-      <a href="//github.com/{{ site.username }}" title="Github" aria-label="GitHub">
-        <span class="genericon genericon-github icon--media" aria-hidden="true"></span>
-        <span class="icon__desc">GitHub</span>
-      </a>
-    </li>
-    <li>
-      <a href="//linkedin.com/in/{{ site.username }}" title="LinkedIn" aria-label="LinkedIn">
-        <span class="genericon genericon-linkedin icon--media" aria-hidden="true"></span>
-        <span class="icon__desc">LinkedIn</span>
-      </a>
-    </li>
-  </ul>
+<footer class="ui-footer" data-aos="fade-up">
+  <section class="ui-footer__content">
+    <p>&copy; {{ site.title }} <time>2016–2018</time></p>
+    <nav class="ui-footer__nav">
+      <ul>
+        <li><a href="/" rel="index">Home</a></li>
+        <li><a href="https://github.com/{{ site.username }}" title="Tiffany Yeung's GitHub profile" aria-label="Contact">GitHub</a></li>
+        <li><a href="https://medium.com/@{{ site.username }}" title="Tiffany Yeung's Medium profile" aria-label="Medium">Medium</a></li>
+        <li><a href="//dribbble.com/{{ site.username }}" title="Tiffany Yeung's Dribbble profile" aria-label="Dribbble profile">Dribbble</a></li>
+      </ul>
+    </nav>
+  </section>
 </footer>

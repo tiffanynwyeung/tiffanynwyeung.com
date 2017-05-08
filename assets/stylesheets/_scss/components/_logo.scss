@@ -1,0 +1,49 @@
+////
+/// Logo styles live here.
+/// @group components, @layout landing
+////
+
+.logo {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.logo__mobile {
+  display: block;
+
+  @include layout-desktop(breakpoint('sm')) {
+    display: none;
+  }
+}
+
+.logo__desktop {
+  display: none;
+
+  @include layout-desktop(breakpoint('sm')) {
+    display: block;
+  }
+}
+
+
+.th--light {
+  .logo__mobile--color {
+    fill: color('red', 'light');
+  }
+
+  .logo__desktop--color {
+    fill: url(#logo-red);
+  }
+}
+
+
+.th--dark {
+  .logo__mobile--color {
+    fill: color('navy', 'light');
+  }
+
+  .logo__desktop--color {
+    fill: url(#logo-gold);
+  }
+}

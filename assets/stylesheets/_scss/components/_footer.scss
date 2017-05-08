@@ -1,0 +1,121 @@
+////
+/// Default site footer styles live here.
+/// @group components, @layout default
+////
+
+.ui-footer {
+  @include type-small;
+
+  width: 100%;
+  height: auto;
+  padding: 4em 0;
+}
+
+.ui-footer__content {
+  width: 82.5%;
+  margin: 0 auto;
+
+  @include layout-desktop(breakpoint('sm')) {
+    text-align: center;
+  }
+
+  p {
+    @include type-small;
+
+    font-weight: $fw-regular;
+    text-transform: uppercase;
+  }
+}
+
+.ui-footer__nav {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline;
+    list-style: none;
+
+    &:not(:last-of-type)::after {
+      content: '•';
+      margin: 0 0.25em;
+
+      @include layout-desktop(breakpoint('sm')) {
+        margin: 0 0.375em;
+      }
+
+      @include layout-desktop() {
+        margin: 0 0.5em;
+      }
+
+      @include layout-desktop(breakpoint('xl')) {
+        margin: 0 0.75em;
+      }
+
+      @include layout-desktop(breakpoint('xxxl')) {
+        margin: 0.875em;
+      }
+    }
+  }
+
+  a {
+    @include type-link-alt(false);
+
+    font-weight: $fw-regular;
+  }
+}
+
+
+.th--light {
+  .ui-footer {
+    background-color: color('sky', 'lighter');
+
+    p {
+      color: color('ink', 'lightest');
+    }
+  }
+
+  .ui-footer__nav {
+    li:not(:last-of-type)::after {
+      color: color('ink', 'lightest');
+    }
+
+    a {
+      color: color('red');
+
+      &:active,
+      &:focus,
+      &:hover {
+        border-bottom-color: color('red');
+      }
+    }
+  }
+}
+
+
+.th--dark {
+  .ui-footer {
+    background-color: color('navy', 'dark');
+
+    p {
+      color: color('ink', 'lighter');
+    }
+  }
+
+  .ui-footer__nav {
+    li:not(:last-of-type)::after {
+      color: color('gold');
+    }
+
+    a {
+      color: color('gold');
+
+      &:active,
+      &:focus,
+      &:hover {
+        border-bottom-color: color('gold');
+      }
+    }
+  }
+}

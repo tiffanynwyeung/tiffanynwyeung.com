@@ -1,0 +1,14 @@
+////
+/// Special styles for the dark theme live here.
+/// @group themes
+////
+
+.th--dark {
+  background: color('navy');
+  color: color('sky', 'light');
+
+  ::selection {
+    background: color('gold', 'light');
+    color: color('ink');
+  }
+}

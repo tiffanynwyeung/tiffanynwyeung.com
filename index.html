@@ -1,46 +1,9 @@
 ---
 layout: default
 type: landing
-
-title: Tiffany Yeung
 ---
 
-<section class="section" id="about">
-  <h1 class="section__title">About Me.</h1>
-  <div class="section__content">
-    <img src="/assets/img/avatar.png" alt="A photo portrait of Tiffany Yeung." id="about-img">
-    <p>Originally from Toronto, Canada, I'm a Computer Science student at the University of Waterloo. I love to design, write code, learn new things, and combine those three together whenever I can. Right now, my focus is on UI/UX design and front-end development.</p>
-    <p>Aside from that, music's a large part of my life; you can always find me collecting tunes and crafting playlists. I also <a href="//medium.com/@{{ site.username }}">write a little</a>, read a lot, and play one too many games of the video, board, and tabletop variety.</p>
-  </div>
-</section>
-
-<section class="section" id="work">
-  <h1 class="section__title">Work I've Done.</h1>
-  <div class="section__content">
-    <ul class="grid">
-      {% for tile in site.data.portfolio %}
-        <li class="grid__item grid__item--md">
-          <a class="tile" href="/work/{{ tile.name }}" title="{{ tile.title }}">
-            <h1 class="tile__title">{{ tile.title }}</h2>
-            <p class="tile__desc--mobile">{{ tile.desc }}</p>
-            <div class="tile__data">
-              <div class="tile__info">
-                <p class="tile__desc">{{ tile.desc }}</p>
-                <div class="tile__btn">Learn More</div>
-              </div>
-            </div>
-            <div class="tile__bg" role="presentation"></div>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="contact">
-  <h1 class="section__title">Get in Touch.</h1>
-  <div class="section__content">
-    <p>Interested in learning more about my work? <a href="/assets/files/resume.pdf" aria-label="Tiffany Yeung's resume">Check out my resume</a>, and see what I can do for you! You can also find me on <a href="//github.com/{{ site.username }}" aria-label="Tiffany Yeung's GitHub profile">GitHub</a> and <a href="//linkedin.com/in/{{ site.username }}" aria-label="Tiffany Yeung's LinkedIn profile">LinkedIn</a>.</p>
-    <p>Or, if you want to talk, then don't hesitate to <a href="mailto:{{ site.username }}@gmail.com" aria-label="Tiffany Yeung's email">send me an email</a>! I'd love to hear from you.</p>
-  </div>
-</section>
+{% assign index = site.landing | sort: "order" %}
+{% for section in index %}
+  {{ section.output }}
+{% endfor %}

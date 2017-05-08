@@ -9,6 +9,7 @@
 
   {% seo title=false %}
 
+  <meta property="og:image" content="/assets/img/avatar-square.png">
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
   <link rel="preload" as="font" type="font/woff" href="/assets/fonts/questrial/questrial-regular.woff" crossorigin>
@@ -19,15 +20,8 @@
       {% include scss/fonts.scss %}
     {% endcapture %}
     {{ fonts | scssify }}
-    {% capture atf %}
-      {% if page.type == 'landing' %}
-        {% include scss/atf-landing.scss %}
-      {% else %}
-        {% include scss/atf-page.scss %}
-      {% endif %}
-    {% endcapture %}
-    {{ atf | scssify }}
   </style>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css" integrity="sha256-G2+IcX6XRBcYufvUNrCqZdR1PDbJkBU164G3zkt2C8Q=" crossorigin="anonymous" />
   <link href="/assets/stylesheets/{% if page.type == 'landing' %}landing{% else %}page{% endif %}.css" rel="stylesheet">
 </head>

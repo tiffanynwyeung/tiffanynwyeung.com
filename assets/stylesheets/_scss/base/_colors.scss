@@ -1,50 +1,56 @@
-/// =====
-/// base/colors
-/// default site color palette.
-/// =====
+////
+/// Site color palette lives here.
+/// @group utilities
+////
 
 $color-palette-data: (
   'gold': (
-    'lighter': hsl(33, 100%, 78%),
-    'light': hsl(32, 73%, 63%),
-    'base': hsl(32, 59%, 56%),
-    'dark': hsl(32, 56%, 53%),
-    'darker': hsl(27, 62%, 36%),
+    'light': #ffe3c1,
+    'base': #ca9a63,
   ),
 
-  'blue': (
-    'lighter': hsl(225, 15%, 35%),
-    'light': hsl(227, 15%, 23%),
-    'base': hsl(226, 23%, 20%),
-    'dark': hsl(225, 28%, 15%),
-    'darker': hsl(223, 30%, 12%),
+  'red': (
+    'light': #f6f0f1,
+    'base': #ce2849,
+    'dark': #773743
+  ),
+
+  'navy': (
+     'light': #21293f,
+     'base': #161925,
+     'dark': #13151f
   ),
 
   'sky': (
-    'lighter': rgba(255, 255, 255, 0.9375),
-    'light': rgba(255, 255, 255, 0.875),
-    'base': rgba(255, 255, 255, 0.75),
-    'dark': hsl(222, 7%, 73%),
+    'lightest': #fdfdfd,
+    'lighter': #f8f8f8,
+    'light': #dbdbdb,
+    'base': #bfbfbf,
+    'dark': #737373
+  ),
+
+  'ink': (
+    'lightest': #8b9198,
+    'lighter': #515867,
+    'light': #273240,
+    'base': #14181f
   ),
 
   'black': (
-    'base': rgba(0,0,0,0.8),
+    'base': #000
   ),
 
   'white': (
-    'base': rgba(255,255,255,1),
+    'base': #fff
   )
 );
 
+///
+/// Returns a color given the associated name.
+/// @param {String} $hue - the basic color family.
+/// @param {String} $gradient [base] - the brightness of the hue. Defaults to 'base'.
+/// @return {Color} - the desired color.
 
-@function color($hue, $variant: base) {
-  $color-spectrum: if(map-has-key($color-palette-data, $hue), map-get($color-palette-data, $hue), null);
-
-  @if $color-spectrum {
-    @if map-has-key($color-spectrum, $variant) {
-      @return map-get($color-spectrum, $variant);
-    }
-  }
-
-  @error "Unknown `#{$name}/#{$variant}` in the color palette.";
+@function color($hue, $gradient: 'base') {
+  @return retrieve-map-value($color-palette-data, "color palette", $hue, $gradient);
 }

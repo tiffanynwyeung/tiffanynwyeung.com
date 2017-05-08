@@ -1,0 +1,15 @@
+- name: Resume
+  title: resume
+  url: /assets/files/tiffanynwyeung_resume.pdf
+
+- name: Contact
+  title: email
+  url: mailto:tiffanynwyeung@gmail.com
+
+- name: GitHub
+  title: GitHub profile
+  url: https://github.com/tiffanynwyeung
+
+- name: LinkedIn
+  title: LinkedIn profile
+  url: https://linkedin.com/in/tiffanynwyeung

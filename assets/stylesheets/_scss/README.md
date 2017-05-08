@@ -1,34 +1,35 @@
 # Style Guide
-This is *mostly* unofficial, and more like a general "quick n' dirty" guide for components related to my current site theme, 'FLUX'.
+
+General styling for theme 3.0 'POLAR'.
+
 
 ## Typography & Copywriting
-There's two main fonts used throughout the site: **Questrial** and **Roboto**.
+There's two main fonts used throughout the site: __Roboto__ and __Questrial__.
 
-**Questrial** is the primary heading font. Headings are styled in two ways:
-- If the heading describes proper objects/topic content (eg. project titles/subtitles, names, places, general nouns), use capitalization.
-- If the heading describes site elements (eg. denoting sections, text for navigation links and buttons), use lowercase.
+__Roboto__ is the default font used throughout the site. This includes all mobile-only section titles, and body copy. Links are bolded and underlined. Italics should be used sparingly.
 
-The only exception is the nameplate subtitle, which is deliberately lowercase.
+__Questrial__ is the headline font. Headlines are written in sentence case (that is, capitalized).
 
-**Roboto** is used for body copy only - in no way should it be used for headings. Links should be bolded instead of underlined. Italics should be used sparingly.
+The only exception is the nameplate tagline/subtitle, which is deliberately all lowercase.
+
 
 ## Colors
-The general color palette boils down to **blue** and **gold**.
 
-**Blue** is used in element backgrounds for important elements like headers, footers, tiles, and text highlighting. This is used to highlight certain information (eg. page title, subtitle, navigation) on the page.
+The color palette is dependent on which theme you use. For the light theme, it's __white__ (main) and __red__ (accent); for the dark theme, it's __indigo__ (main) and __gold__ (accent).
 
-However, this color can also be used as a secondary heading text color (so h2, h3). Generally, this should be used sparingly.
+_Main_ colors are used as the general background color for the document and/or important elements, e.g. footers. The main colors in one theme should never be drastically noticeable between each other.
 
-**Gold** is used for primary text emphasis. Page titles and section headings should both be highlighted in gold, as well as links/buttons.
+_Accent_ colors are used to emphasize important content and copy. This mainly can be found in the nameplate logo, important headlines and links, and so on.
+
 
 ## Codebase
 
 ## Structure
 There's 4 categories for organizing the SCSS:
-- "base/" covers all global variables & mixins, typography, colors, base element styling (typography, body, p, etc)
+- "base/" covers all global variables, typography, colors, and default HTML element styles (typography, body, p, etc)
 - "fonts/" covers all font-face declarations for all required fonts
-- "modules/" covers all reusable partials for various site components, whether reusable within the site or reusable through all site-theme-related projects (eg. navigation, buttons, grid, footer)
-- "sections/" covers specific overrides or unique elements not found within the rest of the site
+- "components/" covers all basic components used throughout the site, e.g. layout, animations, "snowflake" elements consistent between themes, etc
+- "sections/" covers unique styles only found in one specific portion of the site
 
 ### Writing Style
 Generally when writing SCSS, each declaration should look something like this:
@@ -37,7 +38,9 @@ Generally when writing SCSS, each declaration should look something like this:
 .class2,
 #id1 {
   @extend %foo;
+
   @include bar();
+
   width: 100%;
   height: 100%;
   padding: 0;
@@ -67,3 +70,4 @@ Generally when writing SCSS, each declaration should look something like this:
     - Element text styling (eg. font/line-height/color/text-align)
     - Element animation/additional (eg. transform/opacity/cursor)
 - @extends and @include should generally be inserted at the top
+- @extends should be used _highly_ sparingly, and only used for non-existent classes to avoid writing duplicate code

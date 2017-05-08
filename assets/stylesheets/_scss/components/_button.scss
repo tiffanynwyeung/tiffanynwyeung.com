@@ -1,0 +1,71 @@
+////
+/// Default button styles live here.
+/// @group components, @group button, @layout default
+////
+
+.ui-button {
+  @include type-title;
+
+  padding: 1em;
+  display: inline-block;
+  border: 1px solid;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ui-button--disabled {
+  font-weight: 400;
+}
+
+
+.th--light {
+  .ui-button {
+    color: color('ink');
+    border-color: rgba(color('ink'), 0.6);
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: color('red');
+      border-color: color('red');
+    }
+  }
+
+  .ui-button--disabled {
+    color: rgba(color('ink'), 0.4);
+    border-color: rgba(color('ink'), 0.2);
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: rgba(color('ink'), 0.4);
+      border-color: rgba(color('ink'), 0.2);
+    }
+  }
+}
+
+.th--dark {
+  .ui-button {
+    color: color('sky');
+    border-color: rgba(color('sky'), 0.6);
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: color('gold');
+      border-color: color('gold');
+    }
+  }
+
+  .ui-button--disabled {
+    color: rgba(color('sky'), 0.4);
+    border-color: rgba(color('sky'), 0.2);
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: rgba(color('sky'), 0.4);
+      border-color: rgba(color('sky'), 0.2);
+    }
+  }
+}

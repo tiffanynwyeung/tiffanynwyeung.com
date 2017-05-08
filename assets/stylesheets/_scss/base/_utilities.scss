@@ -1,29 +1,100 @@
-/// =====
-/// base/variables
-/// all global variables.
-/// =====
+////
+/// All global variables live here.
+/// @group utilities
+////
 
-// TRANSITIONS
-$default-transition: all 375ms ease-in-out;
 
-// MEDIA QUERIES
-$sm-mobile-width: 20em; // 320px
-$md-mobile-width: 25em; // 400px
-$lg-mobile-width: 31.25em; // 500px
-$xl-mobile-width: 37.5em; // 600px
-$tablet-size: 48em; // 768px
+///
+/// Returns the list of available names in a given map.
+/// @param {Map} $map - the map of data to list the names from.
+/// @param @untouchable {Number} $map - the level of depth to get names from. DO NOT TOUCH.
+/// @return {String} - the list of names in the map.
 
-$sm-mobile-height: 31.25em; // 500px
-$md-mobile-height: 37.5em; // 600px
-$lg-mobile-height: 43.75em; // 700px
-$desktop-height: 46.875em; // 750px
+@function available-names($map, $level: 1) {
+  @if type-of($map) != "map" {
+    @return null;
+  }
+  
+  $offset: "      ";
+  $newline: "\A ";
+  $output: "Available names include: #{$newline}";
 
-$xs-desktop-width: 56.25em; // 900px
-$sm-desktop-width: 68.75em; // 1100px
-$md-desktop-width: 87.5em; // 1400px
+  @if $level == 1 {
+    @each $key, $value in $map {
+      $output: $output + "#{$offset}- #{$key}#{available-names($value, $level + 1)}#{$newline}";
+    }
+  } @else {
+    $output: ": ";
+    $counter: 1;
 
-// VARIABLE LISTS
-$logo-list: (
-  'fname',
-  'lname'
-);
+    @each $key, $value in $map {
+      $separator: if($counter < length($map), ", ", "");
+      $output: $output + "#{$key}#{$separator}#{available-names($value, $level + 1)}";
+      $counter: $counter + 1;
+    }
+  }
+
+  @return $output;
+}
+
+
+///
+/// Returns a map value given a map and the key(s) associated with the value.
+/// @param {Map} $map - the desired map to retrieve the value from.
+/// @param {String} $map-name - the colloquial, "everyday" name of the map.
+/// @param {List} $values - the list of associated keys. 
+/// @return {Any} - the non-null value within the map.
+
+@function retrieve-map-value($map, $map-name, $values...) {
+  $value-names: '';
+  $name-count: 1;
+  
+  @each $name in $values {
+    $separator: if($name-count < length($values), "/", "");
+    $value-names: $value-names + "#{$name}#{$separator}";
+    $name-count: $name-count + 1;
+  }
+  
+  $value-count: 1;
+  $retrieved-value: nth($values, $value-count);
+  $temp-map: $map;
+  
+  @while $value-count <= length($values) {
+    $retrieved-value: map-get($temp-map, $retrieved-value);
+    
+    @if type-of($retrieved-value) == null {
+      @error "Unknown #{$value-names} in the #{$map-name}. #{available-names($map)}";
+    } @else if type-of($retrieved-value) != 'map' {
+      @return $retrieved-value;
+    } @else {
+      $temp-map: $retrieved-value;
+      $value-count: $value-count + 1;
+      $retrieved-value: nth($values, $value-count);
+    }
+  }
+}
+
+
+///
+/// Font declaration mixin.
+/// @param $name - name of the font and its corresponding file.
+/// @param $file-weight [regular] - filename of the font weight. Defaults to regular.
+/// @param $font-weight [normal] - font weight. Defaults to normal.
+/// @param $font-style [normal] - font style. Defaults to normal.
+
+@mixin font-face($name, $file-weight: 'regular', $font-weight: normal, $font-style: normal) {
+
+  $dest: '/assets/fonts/#{$name}/#{$name}';
+
+  font-family: $name;
+  src: url('#{$dest}-#{$file-weight}.eot');
+  src: url('#{$dest}-#{$file-weight}.eot?#iefix') format('embedded-opentype'),
+       url('#{$dest}-#{$file-weight}.woff') format('woff'),
+       url('#{$dest}-#{$file-weight}.ttf') format('truetype');
+  font-weight: #{$font-weight};
+  font-style: #{$font-style};
+}
+
+///
+/// transitions
+$default-transition: all 285ms ease-in-out;
