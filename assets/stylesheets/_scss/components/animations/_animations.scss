@@ -10,14 +10,14 @@
 .img--about,
 .ui-section,
 .ui-footer {
-  will-change: transform;
+  will-change: opacity, transform;
   transform: translateZ(0);
 }
 
 .ui-footer,
 .nameplate__logo,
 .img--about {
-  animation-delay: 125ms;
+  animation-delay: 100ms;
 }
 
 .ui-footer {
@@ -37,22 +37,22 @@
 }
 
 .nameplate__title {
-  animation-delay: 350ms;
+  animation-delay: 250ms;
 }
 
 .ui-section,
 .nameplate__heading {
-  animation-delay: 450ms;
+  animation-delay: 350ms;
 
   @media (min-width: breakpoint('sm')) {
-    animation-delay: 350ms;
+    animation-delay: 300ms;
   }
 }
 
 .nameplate__links {
-  animation-delay: 650ms;
+  animation-delay: 425ms;
 
   @media (min-width: breakpoint('sm')) {
-    animation-delay: 500ms;
+    animation-delay: 380ms;
   }
 }

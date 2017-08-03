@@ -36,6 +36,7 @@ $line-height-data: (
   'tighter': 1.1,
   'tight': 1.25,
   'base': 1.5,
+  'loose': 1.625
 );
 
 ///
@@ -57,11 +58,11 @@ $line-height-data: (
 /// Default text styles for smaller texr
 
 @mixin type-small {
-  font-size: 0.625rem;
-  line-height: lh();
+  font-size: 0.7rem;
+  line-height: lh('loose');
 
   @media (min-width: breakpoint('xl')) {
-    font-size: 0.75rem;
+    font-size: 0.775rem;
   }
 
   @media (min-width: breakpoint('xxl')) {
@@ -78,8 +79,8 @@ $line-height-data: (
 /// Default body typography style
 
 @mixin type-body {
-  font-size: 0.875rem;
-  line-height: lh();
+  font-size: 0.95rem;
+  line-height: lh('loose');
 
   @media (min-width: breakpoint('xs')) {
     font-size: 1rem;
