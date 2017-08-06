@@ -3,15 +3,10 @@
 /// @group components, @group animations
 ////
 
-@keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 @keyframes fade-in-up {
   0% {
     opacity: 0;
-    transform: translateY(8%);
+    transform: translateY(7.5%);
   }
 
   100% {
@@ -23,7 +18,7 @@
 @keyframes fade-in-left {
   0% {
     opacity: 0;
-    transform: translateX(-8%);
+    transform: translateX(-10%);
   }
 
   100% {
@@ -35,7 +30,7 @@
 @keyframes fade-in-right {
   0% {
     opacity: 0;
-    transform: translateX(6.25%);
+    transform: translateX(7.5%);
   }
 
   100% {

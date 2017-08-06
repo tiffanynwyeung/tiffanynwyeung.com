@@ -22,5 +22,5 @@
     {{ fonts | scssify }}
   </style>
 
-  <link href="/assets/stylesheets/landing.css" rel="stylesheet">
+  <link href="/assets/stylesheets/{% if page.type == 'landing' %}landing{% else %}page{% endif %}.css" rel="stylesheet">
 </head>

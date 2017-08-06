@@ -1,0 +1,38 @@
+////
+/// Style overrides and "snowflake" element styles for error pages live here.
+/// @group overrides
+////
+
+.type-error {
+  margin-right: 0.125em;
+  display: none;
+  font-size: 13.5rem;
+  font-family: ff('title');
+  line-height: lh('tightest');
+  letter-spacing: -0.025em;
+
+  @media (min-width: breakpoint('sm')) {
+    display: block;
+  }
+
+  @media (min-width: breakpoint()) {
+    margin-right: 0.175em;
+    font-size: 15rem;
+  }
+
+  @media (min-width: breakpoint('xl')) {
+    font-size: 12.5rem;
+  }
+}
+
+.th--light {
+  .type-error {
+    color: color('red');
+  }
+}
+
+.th--dark {
+  .type-error {
+    color: color('gold');
+  }
+}

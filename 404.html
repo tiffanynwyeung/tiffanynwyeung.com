@@ -1,21 +1,16 @@
 ---
-layout: page
+layout: error
 type: error
 
 title: 404
+heading: 404 Page Not Found
 id: error404
 ---
 
-<div class="ui-section">
-  <header class="ui-section__header">
-    <h1>Page Not Found</h1>
-    <h2>
-      <span class="type-headline type-headline__top">
-        Seems like <span class="type-headline--highlight">this page doesn&rsquo;t exist</span>.
-      </span>
-    </h2>
-  </header>
-  <div class="ui-section__content">
-    <p>How about going back to <a href="/" rel="index">the main site</a> and trying again from there?</p>
-  </div>
+<header class="ui-section__header">
+  <h1>{{ page.heading }}</h1>
+  <h2 class="type-headline">Seems like this page doesn&rsquo;t exist.</h2>
+</header>
+<div class="ui-section__content">
+  <p>How about going back to <a href="/" rel="index">the main site</a> and trying again from there?</p>
 </div>

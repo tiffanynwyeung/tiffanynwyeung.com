@@ -1,5 +1,5 @@
 ---
-# landing.scss: landing page stylesheet. compiled via jekyll.
+# page.scss: default page stylesheet. compiled via jekyll.
 ---
 
 /// Utilities
@@ -28,6 +28,6 @@
 @import 'themes/light';
 @import 'themes/dark';
 
-/// Landing-specific components
-@import 'components/logo';
-@import 'components/snowflake/nameplate';
+/// Overrides
+@import 'overrides/about';
+@import 'overrides/error';

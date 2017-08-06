@@ -3,13 +3,19 @@
 /// @group components, @group animations
 ////
 
+// General UI components
+.ui-section,
+.ui-footer,
+
+// Snowflake
 .nameplate__logo,
 .nameplate__title,
 .nameplate__heading,
 .nameplate__links,
+
+// Overrides
 .img--about,
-.ui-section,
-.ui-footer {
+.type-error {
   will-change: opacity, transform;
   transform: translateZ(0);
 }
@@ -25,7 +31,8 @@
 }
 
 .nameplate__logo,
-.img--about {
+.img--about,
+.type-error {
   @extend %animation-fade-in--left;
 }
 

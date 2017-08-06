@@ -11,17 +11,12 @@
 }
 
 %animation-fade-in {
-  &--default,
   &--up,
   &--left,
   &--right {
     opacity: 0;
     animation-duration: 350ms;
     @extend %animation-settings;
-  }
-
-  &--default {
-    animation-name: fade-in;
   }
 
   &--up {
