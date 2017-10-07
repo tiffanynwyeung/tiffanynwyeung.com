@@ -2,12 +2,20 @@
 ## Configuration
 ###
 
+collections_dir: _content
+
+collections:
+  landing:
+    relative_directory: "_content/landing/"
+
 plugins:
   - jekyll-autoprefixer
   - jekyll-seo-tag
   - jekyll-sitemap
 
-exclude: [deploy.sh]
+include: ["_content/"]
+
+exclude: ["deploy.sh"]
 
 # Site Info
 title: Tiffany Yeung

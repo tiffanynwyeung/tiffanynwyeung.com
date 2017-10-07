@@ -2,3 +2,9 @@
 layout: default
 type: landing
 ---
+
+{% for section in site.landing %}
+  {% if section.content-type == page.type %}
+    {{ section.output }}
+  {% endif %}
+{% endfor %}
