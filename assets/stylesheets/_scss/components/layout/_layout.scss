@@ -31,5 +31,7 @@
   @media (min-width: breakpoint()) {
     width: 75%;
     height: 75%;
+    max-width: 75rem;
+    max-height: 40rem;
   }
 }

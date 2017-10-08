@@ -16,6 +16,10 @@
     width: 75%;
     max-width: 75rem;
   }
+
+  @media (min-width: breakpoint('xxxl')) {
+    max-width: 100rem;
+  }
 }
 
 .nameplate__logo {
@@ -41,8 +45,13 @@
     width: 37.5%;
   }
 
+  @media (min-width: breakpoint('xxl')) {
+    width: 35%;
+  }
+
   @media (min-width: breakpoint('xxxl')) {
-    width: 32.5%;
+    width: 30%;
+    max-width: 30rem;
   }
 }
 
@@ -70,7 +79,7 @@
   line-height: lh('tightest');
   text-transform: lowercase;
 
-  @media (min-width: 789px) {
+  @media (min-width: #{breakpoint('sm') + 1px}) {
     font-size: 3rem;
   }
 
@@ -82,8 +91,8 @@
     font-size: 3.75rem;
   }
 
-  @media (min-width: breakpoint('xxxxl')) {
-    font-size: 4rem;
+  @media (min-width: breakpoint('xxl')) {
+    font-size: 4.125rem;
   }
 
   &--bottom {

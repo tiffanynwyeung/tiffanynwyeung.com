@@ -69,7 +69,7 @@ $line-height-data: (
     font-size: 0.875rem;
   }
 
-  @media (min-width: brekapoint('xxxxl')) {
+  @media (min-width: breakpoint('xxxl')) {
     font-size: 0.9375rem;
   }
 }
@@ -90,7 +90,7 @@ $line-height-data: (
     font-size: 1.125rem;
   }
 
-  @media (min-width: breakpoint('xxxxl')) {
+  @media (min-width: breakpoint('xxl')) {
     font-size: 1.25rem;
   }
 }
