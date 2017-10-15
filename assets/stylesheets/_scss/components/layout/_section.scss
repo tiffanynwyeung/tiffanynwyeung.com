@@ -13,8 +13,4 @@
   @include type-body;
 
   width: 100%;
-
-  @media (min-width: breakpoint('xl')) and (min-height: breakpoint('xxs')) {
-    max-width: 30em;
-  }
 }

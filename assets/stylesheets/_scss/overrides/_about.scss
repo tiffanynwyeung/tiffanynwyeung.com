@@ -3,8 +3,16 @@
 /// @group overrides
 ////
 
+#about {
+  .ui-section__content {
+    @media (min-width: breakpoint('xl')) and (min-height: breakpoint('xxs')) {
+      max-width: 30em;
+    }
+  }
+}
+
 .img--about {
-  @include type-title;
+  @include type-heading;
   display: none;
   border-radius: 2px;
 

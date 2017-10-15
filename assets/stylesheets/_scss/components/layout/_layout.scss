@@ -15,8 +15,8 @@
   position: relative;
 
   @media (min-width: breakpoint()) and (min-height: breakpoint('xxs')) {
-    height: 95vh;
-    min-height: 95vh;
+    height: 100vh;
+    min-height: 100vh;
   }
 }
 
