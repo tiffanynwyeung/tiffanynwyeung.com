@@ -1,0 +1,14 @@
+- name: designs
+  title: Designs & themes
+  desc: A gallery of designs and web themes I make in my spare time.
+  type: project
+
+- name: shopify
+  title: Shopify
+  desc: As a UX Systems intern, I worked on the launch of Polaris, Shopify's new design system for their platform.
+  type: internship
+
+- name: software
+  title: Software
+  desc: A collection of side projects I've built over the years.
+  type: project

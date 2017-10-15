@@ -1,0 +1,28 @@
+////
+/// Style overrides and "snowflake" element styles for the work section live here.
+/// @group overrides
+////
+
+#work {
+  .ui-section__content {
+    @media (min-width: breakpoint('xl')) and (min-height: breakpoint('xxs')) {
+      max-width: 46em;
+    }
+  }
+}
+
+.work-tile {
+  height: 100%;
+  padding: 1.5em;
+  background: #555;
+  border-radius: 2px;
+  color: color('sky', 'lighter');
+}
+
+#work--shopify {
+  grid-area: featured;
+}
+
+#work--design {
+  
+}

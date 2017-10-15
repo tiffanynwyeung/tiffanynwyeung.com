@@ -1,0 +1,26 @@
+---
+layout: section
+content-type: landing
+
+title: Work
+id-name: work
+---
+
+<div class="ui-section">
+  <header class="ui-section__header">
+    <h1>Work I've Done</h1>
+    <h2 class="type-headline">Here&rsquo;s some of the <span class="type-headline--highlight">work I&rsquo;ve done.</span></h2>
+  </header>
+  <div class="ui-section__content">
+    <ul class="ui-grid">
+      {% for tile in site.data.work %}
+      <li class="ui-grid__item" id="work--{{ tile.name }}">
+        <a href="/work/{{ tile.name }}" class="work-tile">
+          <h3 class="work-tile__title">{{ tile.title }}</h3>
+          <span class="work-tile__desc">{{ tile.desc }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

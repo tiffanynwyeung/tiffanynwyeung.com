@@ -1,0 +1,34 @@
+////
+/// Default UI grid layout component styles live here.
+/// @group components, @layout default, @layout grid
+////
+
+.ui-grid {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: block;
+  list-style: none;
+
+  @media (min-width: breakpoint()) and (min-height: breakpoint('xxs')) {
+    min-height: 50vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 2fr; 
+    grid-template-areas: 
+      ". featured"
+      ". featured";
+    grid-gap: 1rem;
+    justify-content: end;
+  }
+}
+
+.ui-grid__item {
+  width: 100%;
+  display: block;
+
+  @media (min-width: breakpoint()) and (min-height: breakpoint('xxs')) {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
