@@ -54,9 +54,9 @@ $line-height-data: (
 
 
 ///
-/// Default text styles for smaller text
+/// Default text styles for extra small text
 
-@mixin type-small {
+@mixin type-xsmall {
   font-size: 0.7rem;
   line-height: lh('loose');
 
@@ -70,6 +70,23 @@ $line-height-data: (
 
   @media (min-width: breakpoint('xxxl')) {
     font-size: 0.9375rem;
+  }
+}
+
+@mixin type-small {
+  font-size: 0.875rem;
+  line-height: lh('loose');
+
+  @media (min-width: breakpoint('xl')) {
+    font-size: 0.9375rem;
+  }
+  
+  @media (min-width: breakpoint('xxl')) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: breakpoint('xxxl')) {
+    font-size: 1.125rem;
   }
 }
 

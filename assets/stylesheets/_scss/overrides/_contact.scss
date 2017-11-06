@@ -1,0 +1,15 @@
+////
+/// Style overrides and "snowflake" element styles for the contact section live here.
+/// @group overrides
+////
+
+#contact {
+  min-height: auto;
+  height: auto;
+
+  .ui-section__content {
+    @media (min-width: breakpoint('xl')) and (min-height: breakpoint('xxs')) {
+      max-width: 40em;
+    }
+  }
+}

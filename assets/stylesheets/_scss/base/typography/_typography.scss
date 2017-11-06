@@ -83,7 +83,9 @@ h2 {
 h3 {
   @include type-title;
   
+  margin: 0 auto 1em;
   font-family: ff('body');
+  line-height: 1.25;
 }
 
 

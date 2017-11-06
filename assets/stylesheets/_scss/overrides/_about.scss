@@ -14,7 +14,7 @@
 .img--about {
   @include type-heading;
   display: none;
-  border-radius: 2px;
+  border-radius: radius();
 
   @media (min-width: breakpoint('sm')) and (min-height: breakpoint('xxs')) {
     width: auto;

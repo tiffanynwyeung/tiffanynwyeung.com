@@ -11,15 +11,14 @@
   list-style: none;
 
   @media (min-width: breakpoint()) and (min-height: breakpoint('xxs')) {
-    min-height: 50vh;
+    width: 100%;
+    max-height: 100%;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 2fr; 
-    grid-template-areas: 
-      ". featured"
-      ". featured";
     grid-gap: 1rem;
-    justify-content: end;
+    align-content: start;
+    align-items: stretch;
+    justify-content: stretch;
+    justify-items: stretch;
   }
 }
 
@@ -29,6 +28,6 @@
 
   @media (min-width: breakpoint()) and (min-height: breakpoint('xxs')) {
     display: flex;
-    flex-flow: column nowrap;
+    align-items: stretch;
   }
 }

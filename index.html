@@ -3,8 +3,9 @@ layout: default
 type: landing
 ---
 
-{% for section in site.landing %}
-  {% if section.content-type == page.type %}
+{% assign landing_content = site.landing | sort: "order" %}
+{% for section in landing_content %}
+  {% if section.content-for == page.type %}
     {{ section.output }}
   {% endif %}
 {% endfor %}

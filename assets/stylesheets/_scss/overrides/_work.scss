@@ -6,23 +6,54 @@
 #work {
   .ui-section__content {
     @media (min-width: breakpoint('xl')) and (min-height: breakpoint('xxs')) {
-      max-width: 46em;
+      max-width: 40em;
     }
+  }
+
+  .ui-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 10em);
+    grid-template-areas: 
+      "design shopify shopify"
+      "hvz hvz projects";
   }
 }
 
 .work-tile {
-  height: 100%;
-  padding: 1.5em;
-  background: #555;
-  border-radius: 2px;
+  @include type-small;
+  width: 100%;
+  padding: 1.5rem;
+  border: 0;
+  border-radius: radius();
   color: color('sky', 'lighter');
 }
 
 #work--shopify {
-  grid-area: featured;
+  grid-area: shopify;
 }
 
 #work--design {
-  
+  grid-area: design;
+}
+
+#work--projects {
+  grid-area: projects;
+}
+
+#work--hvz-website {
+  grid-area: hvz;
+}
+
+
+.th--light {
+  .work-tile {
+    background: color('red');
+  }
+}
+
+
+.th--dark {
+  .work-tile {
+    background: color('blue');
+  }
 }

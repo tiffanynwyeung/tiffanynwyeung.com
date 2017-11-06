@@ -4,7 +4,7 @@
 ////
 
 .ui-footer {
-  @include type-small;
+  @include type-xsmall;
 
   width: 100%;
   height: auto;
@@ -31,7 +31,7 @@
   }
 
   p {
-    @include type-small;
+    @include type-xsmall;
 
     font-weight: $fw-regular;
     text-transform: uppercase;
