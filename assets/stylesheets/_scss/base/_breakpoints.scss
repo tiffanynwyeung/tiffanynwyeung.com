@@ -4,14 +4,11 @@
 ////
 
 $breakpoints-data: (
-  'xxs': 400px,
-  'xs': 600px,
-  'sm': 768px,
-  'md': 950px,
+  'sm': 600px,
+  'md': 768px,
   'lg': 1024px,
-  'xl': 1180px,
-  'xxl': 1400px,
-  'xxxl': 1600px,
+  'xl': 1400px,
+  'xxl': 2560px
 );
 
 ///
@@ -21,22 +18,4 @@ $breakpoints-data: (
 
 @function breakpoint($value: 'md') {
   @return retrieve-map-value($breakpoints-data, "breakpoints data", $value);
-}
-
-///
-/// Media query mixin for desktop-specific layouts. 
-/// @param {px} $min-width-bp [breakpoint()] - a valid breakpoint for the miniumum screen width.
-/// @param {px} $max-width-bp - Optional. A valid breakpoint for the maximum width of the screen.
-/// @output - media query that has a minimum width of $width-bp and minimum height of 400px.
-
-@mixin layout-desktop($min-width-bp: breakpoint(), $max-width-bp: null) {
-  @if ($max-width-bp) {
-    @media (min-width: $min-width-bp) and (max-width: $max-width-bp) and (min-height: 500px) {
-      @content;
-    }
-  } @else {
-    @media (min-width: $min-width-bp) and (min-height: 500px) {
-      @content;
-    }
-  }
 }

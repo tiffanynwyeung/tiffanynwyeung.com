@@ -4,5 +4,24 @@
 ////
 
 @import 'base/utilities';
-@import 'fonts/questrial';
-@import 'fonts/roboto';
+
+@font-face {
+  @include font-face('questrial');
+}
+
+@font-face {
+  @include font-face('roboto', 'light', 300);
+}
+
+@font-face {
+  @include font-face('roboto', 'light-italic', 300, italic);
+}
+
+@font-face {
+  @include font-face('roboto');
+}
+
+@font-face {
+  @include font-face('roboto', 'italic', $font-style: italic);
+}
+

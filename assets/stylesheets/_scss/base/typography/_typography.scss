@@ -23,120 +23,71 @@ p {
   @include type-body;
 }
 
-
-a {
-  padding-bottom: 0.05em;
-  display: inline;
-  border-bottom: 0.05em solid;
-  font-weight: $fw-regular;
-  text-decoration: none;
-  transition: $default-transition;
-
-  @include layout-desktop(breakpoint('xxl')) {
-    border-bottom-width: 0.1em;
-  }
-
-  &:active,
-  &:focus,
-  &:hover {
-    transition: $default-transition;
-  }
-}
-
-
-///
-/// Headings
-
 h1 {
-  @include type-title;
+  padding: 0;
+  margin-bottom: 0.5em;
+  font-size: 0.875rem;
+  line-height: lh(loose);
+  letter-spacing: 0.0625em;
+  text-transform: uppercase;
 
-  @include layout-desktop(breakpoint('sm')) {
-    display: none;
+  @media (min-width: breakpoint()) {
+    font-size: 0.9375rem;
+  }
+
+  @media (min-width: breakpoint(xl)) {
+    font-size: 1rem;
   }
 }
 
 h2 {
-  @include type-heading;
+  @include type-title;
 
-  font-family: ff('title');
+  font-family: ff(title);
 }
 
 .type-headline {
-  @include layout-desktop(breakpoint('xl')) {
+  display: inline;
+
+  @media (min-width: breakpoint(xl)) {
     display: block;
   }
-
-  &__top {
-    position: relative;
-
-    @include layout-desktop(breakpoint('xl')) {
-      left: -2em;
-    }
-  }
-}
-
-h3 {
-  @include type-title;
-  
-  font-family: ff('body');
-}
-
-h4 {
-  @include type-body;
-
-  margin-bottom: 1em;
-  font-family: ff('body');
-  font-style: italic;
 }
 
 
 .th--light {
   h1 {
-    color: color('ink', 'light');
+    color: color(ink, light);
   }
 
   h2 {
-    color: color('ink');
+    color: color(ink);
   }
 
-  p > a {
-    color: color('red');
-    border-bottom-color: color('red');
+  a {
+    color: color(red);
   }
 
   .type-headline--highlight {
-    color: color('red');
-  }
-
-  .nameplate__heading > .type-headline--highlight {
-    @include layout-desktop(breakpoint('sm')) {
-      color: color('ink');
-    }
+    color: color(red);
   }
 }
 
 
 .th--dark {
   h1 {
-    color: color('sky');
+    color: color(sky, dark);
   }
 
   h2 {
-    color: color('sky', 'light');
+    color: color(sky);
   }
 
-  p > a {
-    color: color('gold');
-    border-bottom-color: color('gold');
+  a {
+    color: color(gold);
   }
 
   .type-headline--highlight {
-    color: color('gold');
-  }
-
-  .nameplate__heading > .type-headline--highlight {
-    @include layout-desktop(breakpoint('sm')) {
-      color: color('sky', 'light');
-    }
+    color: color(gold);
   }
 }

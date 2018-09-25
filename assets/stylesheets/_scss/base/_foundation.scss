@@ -8,7 +8,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*, 
+*::before, 
+*::after {
   box-sizing: inherit;
 }
 
@@ -19,7 +21,7 @@ body {
   padding: 0;
   margin: 0;
   border: 0;
-  font: $fw-light 100%/#{lh()} ff('body');
+  font: $fw-light 100%/#{lh()} ff(body);
   word-wrap: break-word;
   vertical-align: baseline;
 }

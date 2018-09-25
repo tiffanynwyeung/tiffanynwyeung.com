@@ -1,13 +1,11 @@
 ---
-# page.scss: default page stylesheet. compiled via jekyll.
+# global.scss: global stylesheet. compiled via jekyll.
 ---
 
 /// Utilities
 @import 'base/utilities';
 @import 'base/breakpoints';
 @import 'base/colors';
-@import 'base/shadows';
-@import 'base/z-index';
 @import 'base/typography/definitions';
 
 /// Foundation styles
@@ -15,16 +13,11 @@
 @import 'base/foundation';
 @import 'base/typography/typography';
 
-/// Animations
-@import 'components/animations';
-
 /// Components
-@import 'components/layout/layout';
-@import 'components/layout/section';
+@import 'components/layout';
 @import 'components/footer';
-
-/// Overrides
-@import 'overrides/error';
+@import 'components/avatar';
+@import 'components/theme-toggle';
 
 /// Themes
 @import 'themes/light';

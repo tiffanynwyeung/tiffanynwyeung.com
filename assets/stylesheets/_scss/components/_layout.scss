@@ -1,0 +1,45 @@
+////
+/// Default layout styles live here.
+/// @group components, @layout default
+////
+
+.ui-layout {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  padding: 10% 0;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: breakpoint()) {
+    padding: 5% 0;
+  }
+}
+
+.ui-section {
+  width: 82.5%;
+  height: 82.5%;
+
+  @media (min-width: breakpoint()) {
+    max-width: 32rem;
+  }
+
+  @media (min-width: breakpoint(xl)) {
+    max-width: 36rem;
+  }
+
+  @media (min-width: breakpoint(xxl)) {
+    max-width: 40rem;
+  }
+}
+
+.ui-section__header {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.ui-section__content {
+  @media (min-width: breakpoint()) {
+    width: 97.5%;
+  }
+}

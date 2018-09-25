@@ -4,11 +4,11 @@
 ////
 
 .th--light {
-  background: color('sky', 'lightest');
-  color: color('ink', 'light');
+  background: color(sky, lighter);
+  color: color(ink, light);
 
   ::selection {
-    background: color('red', 'dark');
-    color: color('sky', 'lightest');
+    background: color(red, dark);
+    color: color(sky, lighter);
   }
 }

@@ -1,0 +1,41 @@
+////
+/// Style overrides and "snowflake" element styles for the about section in landing live here.
+/// @page landing, @group overrides
+////
+
+.img--avatar {
+  @include type-title;
+
+  display: none;
+  border-radius: 2px;
+
+  @media (min-width: breakpoint()) {
+    width: auto;
+    height: auto;
+    max-height: 6.25rem;
+    margin-right: 1.125em;
+    display: block;
+  }
+  
+  @media (min-width: breakpoint(xl)) {
+    max-height: 6.875rem;
+  }
+
+  @media (min-width: breakpoint(xxl)) {
+    max-height: 7.5rem;
+  }
+}
+
+
+.th--light {
+  .img--avatar {
+    filter: saturate(90%) opacity(60%);
+  }
+}
+
+
+.th--dark {
+  .img--avatar {
+    filter: saturate(40%) opacity(60%);
+  }
+}

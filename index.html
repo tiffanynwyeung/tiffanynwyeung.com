@@ -3,7 +3,31 @@ layout: default
 type: landing
 ---
 
-{% assign index = site.landing | sort: "order" %}
-{% for section in index %}
-  {{ section.output }}
-{% endfor %}
+<header class="ui-section__header">
+  <img src="/assets/img/avatar.png" alt="A photo avatar of Tiffany Yeung." class="img--avatar">
+  <div class="ui-section__title-container">
+    <h1>Tiffany Yeung.</h1>
+    <h2>
+      <span class="type-headline">I&rsquo;m a <span class="type-headline--highlight">software developer</span> with</span>
+      <span class="type-headline"> a passion for <span class="type-headline--highlight">UI & UX design</span>.</span>
+      </span>
+    </h2>
+  </div>
+</header>
+<div class="ui-section__content">
+  <p>I'm a Computer Science student at the University of Waterloo looking for an opportunity to design, code, and learn more about both. In the past, I was a front-end developer intern at <a href="https://shopify.ca">Shopify</a>, where I built and launched <a href="https://polaris.shopify.com">their design system, Polaris</a>. For the last year, I overhauled <a href="https://github.com/uwhumansvszombies/uwhvz">the game dashboard used by the UW Humans vs Zombies club</a>, rebuilding it from scratch with Django and Wagtail.</p>
+  <p>I'm also a big fan of the simple things in life. My free time is usually spent reading, writing, listening to music, and playing video games.</p>
+  <p>I'm always open to talking and I'm currently looking for my next internship, so feel free to <a href="mailto:tiffanynwyeung@gmail.com">shoot me an email</a> if you want to chat about anything. For more projects and other code-related things I work on, check out my <a href="https://github.com/tiffanynwyeung">GitHub</a>.</p>
+</div>
+<footer class="ui-footer">
+  <section class="ui-footer__content">
+    <p>&copy; {{ site.title }} <time>2016 &mdash; 2018</time></p>
+    <nav class="ui-footer__nav">
+      <ul>
+        {% for link in site.data.links %}
+          <li><a href="{{ link.url }}" title="Tiffany Yeung's {{ link.title }}" aria-label="Link to Tiffany Yeung's {{ link.title }}">{{ link.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </section>
+</footer>

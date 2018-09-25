@@ -1,7 +1,3 @@
-- name: Resume
-  title: resume
-  url: /assets/files/tiffanynwyeung_resume.pdf
-
 - name: Contact
   title: email
   url: mailto:tiffanynwyeung@gmail.com
@@ -13,3 +9,7 @@
 - name: LinkedIn
   title: LinkedIn profile
   url: https://linkedin.com/in/tiffanynwyeung
+
+- name: Dribbble
+  title: Dribbble profile
+  url: https://dribbble.com/tiffanynwyeung

@@ -4,43 +4,39 @@
 ////
 
 $color-palette-data: (
-  'gold': (
+  gold: (
     'light': #ffe3c1,
     'base': #ca9a63,
   ),
 
-  'red': (
-    'light': #f6f0f1,
+  red: (
     'base': #ce2849,
     'dark': #773743
   ),
 
-  'navy': (
+  navy: (
      'light': #21293f,
      'base': #161925,
-     'dark': #13151f
   ),
 
-  'sky': (
-    'lightest': #fdfdfd,
-    'lighter': #f8f8f8,
-    'light': #dbdbdb,
-    'base': #bfbfbf,
-    'dark': #737373
+  sky: (
+    'lighter': #fdfdfd,
+    'light': #ececec,
+    'base': #dbdbdb,
+    'dark': #bfbfbf,
   ),
 
-  'ink': (
-    'lightest': #8b9198,
-    'lighter': #515867,
-    'light': #273240,
+  ink: (
+    'lighter': #6b7076,
+    'light': #3a4553,
     'base': #14181f
   ),
 
-  'black': (
+  black: (
     'base': #000
   ),
 
-  'white': (
+  white: (
     'base': #fff
   )
 );

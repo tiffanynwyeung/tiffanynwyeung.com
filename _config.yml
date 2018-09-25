@@ -9,21 +9,14 @@ plugins:
 
 # Site Info
 title: Tiffany Yeung
-description: Tiffany Yeung is a freelance web developer and Computer Science student at the University of Waterloo, always eager to grow, learn, create, and build.
+description: "I'm a software developer with a passion for UI & UX design, and a Computer Science student at the University of Waterloo."
 
-keywords: tiffany,yeung,designer,developer,writer,blogger,hire,freelance,web,design,development,dev,user,interface,experience,ui,ux,interaction,portfolio,linkedin,github,medium,blog,dribble,dribbble,adobe,sketch,illustration,animation,graphic,creative,art,visual,university,waterloo,uwaterloo,cs,computer,science,software
+keywords: tiffany,yeung,designer,developer,writer,computer,hire,freelance,web,software,design,development,dev,user,interface,experience,ui,ux,interaction,portfolio,linkedin,github,medium,blog,dribble,dribbble,adobe,sketch,illustration,animation,graphic,creative,art,visual,university,waterloo,uwaterloo,cs,computer,science,software
 
 url: https://tiffanynwyeung.com
 baseurl: ""
 
-# Site Content
-logo: /assets/img/favicon.png
-tagline: Designer & Developer.
-
-# Collections
-collections_dir: _content
-collections: 
-  - landing
+favicon: /assets/img/favicon.png
 
 # Assets
 sass:

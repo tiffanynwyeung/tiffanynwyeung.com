@@ -2,11 +2,15 @@
 
 <html lang="en">
   {% include head.html %}
-  <body>
-    <main class="th--light">
-      {% include header.html %}
-      {{ content }}
-      {% include footer.html %}
+  <body class="th--light">
+    <div class="theme-toggle">
+      <img class="theme-toggle__mode theme-toggle__icon" id="dark-mode" src="/assets/img/moon.svg" aria-hidden="true">
+      <img class="theme-toggle__mode theme-toggle__icon" id="light-mode" src="/assets/img/sun.svg" aria-hidden="true">
+    </div>
+    <main class="ui-layout">
+      <section class="ui-section">
+        {{ content }}
+      </section>
     </main>
     {% include scripts.html %}
     {% include analytics.html %}

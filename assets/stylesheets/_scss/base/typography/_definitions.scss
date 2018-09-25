@@ -37,7 +37,7 @@ $line-height-data: (
 ///
 /// Returns a line-height given the associated name.
 /// @param {String} $variant [base] - the variant name. Defaults to 'base'.
-/// @returns {Number} - the desired line-height.
+/// @return {Number} - the desired line-height.
 
 @function lh($variant: 'base') {
   @return retrieve-map-value($line-height-data, "line-height data", $variant);
@@ -49,17 +49,17 @@ $line-height-data: (
 
 @mixin type-small {
   font-size: 0.625rem;
-  line-height: lh('loose');
+  line-height: lh(loose);
 
-  @media (min-width: breakpoint('xs')) {
+  @media (min-width: breakpoint(sm)) {
     font-size: 0.75rem;
   }
 
-  @include layout-desktop(breakpoint('xxl')) {
+  @media (min-width: breakpoint(xl)) {
     font-size: 0.875rem;
   }
 
-  @include layout-desktop(breakpoint('xxxl')) {
+  @media (min-width: breakpoint(xxl)) {
     font-size: 1rem;
   }
 }
@@ -70,76 +70,34 @@ $line-height-data: (
 
 @mixin type-body {
   font-size: 0.875rem;
-  line-height: lh('loose');
+  line-height: lh(loose);
 
-  @media (min-width: breakpoint('xs')) {
+  @media (min-width: breakpoint(sm)) {
     font-size: 1rem;
   }
 
-  @include layout-desktop(breakpoint('xl')) {
+  @media (min-width: breakpoint(xl)) {
     font-size: 1.125rem;
   }
 
-  @include layout-desktop(breakpoint('xxl')) {
+  @media (min-width: breakpoint(xxl)) {
     font-size: 1.25rem;
   }
 }
 
 
 ///
-/// Default heading styles. Goes up by 4px.
+/// Default title styles. Goes up by 4px.
 
-@mixin type-heading {
+@mixin type-title {
   font-size: 1.75rem;
-  line-height: lh('tight');
+  line-height: lh(tight);
 
-  @include layout-desktop(breakpoint('sm')) {
+  @media (min-width: breakpoint(xl)) {
     font-size: 2rem;
   }
 
-  @include layout-desktop(breakpoint('xl')) {
+  @media (min-width: breakpoint(xxl)) {
     font-size: 2.25rem;
-  }
-
-  @include layout-desktop(breakpoint('xxl')) {
-    font-size: 2.5rem;
-  }
-}
-
-
-///
-/// Default title styles. Only for subheadings/mobile titles.
-
-@mixin type-title {
-  padding: 0;
-  font-size: 0.9375rem;
-  line-height: lh('tighter');
-  letter-spacing: 1px;
-  text-transform: uppercase;
-
-  @media (min-width: breakpoint('xs')) {
-    font-size: 1.125rem;
-  }
-}
-
-
-///
-/// Alternative type styles for block-styled links. Only for nameplate.
-
-@mixin type-link-alt($border-breakpoint: true, $border-width-breakpoint: breakpoint('sm')) {
-  padding-bottom: 0.125em;
-  border-bottom: 0.05em solid transparent;
-  text-transform: uppercase;
-
-  @if $border-breakpoint {
-    @include layout-desktop($border-width-breakpoint) {
-      border-bottom-width: 0.1em;
-    }
-  }
-
-  &:active,
-  &:focus,
-  &:hover {
-    padding-bottom: 0.375em;
   }
 }

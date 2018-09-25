@@ -4,11 +4,11 @@
 ////
 
 .th--dark {
-  background: color('navy');
-  color: color('sky', 'light');
+  background: color(navy);
+  color: color(sky);
 
   ::selection {
-    background: color('gold', 'light');
-    color: color('ink');
+    background: color(gold, light);
+    color: color(ink);
   }
 }

@@ -1,0 +1,50 @@
+////
+/// Styles for the theme toggler live here.
+/// @group themes
+////
+
+.theme-toggle {
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: $default-transition;
+
+  @media (min-width: breakpoint()) {
+    padding: 1.5em;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    opacity: 1;
+    transition: $default-transition;
+  }
+}
+
+.theme-toggle__mode {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: right;
+}
+
+.theme-toggle__icon {
+  width: 0.75rem;
+  display: block;
+
+  @media (min-width: breakpoint()) {
+    width: 0.875rem;
+  }
+}
+
+.th--light #light-mode,
+.th--dark #dark-mode {
+  display: none;
+}

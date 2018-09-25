@@ -7,87 +7,80 @@
   @include type-small;
 
   width: 100%;
-  height: auto;
-  padding: 4em 0;
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 1px solid;
 }
 
-.ui-footer__content {
-  width: 82.5%;
-  margin: 0 auto;
+.ui-footer__content p {
+  @include type-small;
 
-  @include layout-desktop(breakpoint('sm')) {
-    text-align: center;
-  }
-
-  p {
-    @include type-small;
-
-    font-weight: $fw-regular;
-    text-transform: uppercase;
-  }
+  margin-bottom: 0.75em;
+  font-weight: $fw-regular;
+  text-transform: uppercase;
 }
 
 .ui-footer__nav {
   ul {
     padding: 0;
     margin: 0;
+    list-style: none;
   }
 
   li {
     display: inline;
-    list-style: none;
 
     &:not(:last-of-type)::after {
       content: '•';
-      margin: 0 0.25em;
+      margin: 0 0.25em 0 0.5em;
 
-      @include layout-desktop(breakpoint('sm')) {
-        margin: 0 0.375em;
-      }
-
-      @include layout-desktop() {
-        margin: 0 0.5em;
-      }
-
-      @include layout-desktop(breakpoint('xl')) {
+      @media (min-width: breakpoint(xl)) {
         margin: 0 0.75em;
       }
 
-      @include layout-desktop(breakpoint('xxxl')) {
-        margin: 0.875em;
+      @media (min-width: breakpoint(xxl)) {
+        margin: 0 0.875em;
       }
     }
   }
 
   a {
-    @include type-link-alt(false);
+    @include type-small;
 
+    padding-bottom: 0.125em;
+    border-bottom: 0.05em solid transparent;
     font-weight: $fw-regular;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @media (min-width: breakpoint()) {
+      border-bottom-width: 0.1em;
+    }
   }
 }
 
 
 .th--light {
   .ui-footer {
-    background-color: color('sky', 'lighter');
+    border-color: color(sky, light);
 
     p {
-      color: color('ink', 'lightest');
+      color: color(ink, lighter);
     }
   }
 
   .ui-footer__nav {
     li:not(:last-of-type)::after {
-      color: color('ink', 'lightest');
+      color: color(ink, lighter);
     }
 
     a {
-      color: color('red');
+      color: color(red);
 
       &:active,
       &:focus,
       &:hover {
-        border-bottom-color: color('red');
+        border-bottom-color: color(red);
       }
     }
   }
@@ -96,25 +89,25 @@
 
 .th--dark {
   .ui-footer {
-    background-color: color('navy', 'dark');
+    border-color: color(navy, light);
 
     p {
-      color: color('ink', 'lighter');
+      color: color(ink, lighter);
     }
   }
 
   .ui-footer__nav {
     li:not(:last-of-type)::after {
-      color: color('gold');
+      color: color(ink, lighter);
     }
 
     a {
-      color: color('gold');
+      color: color(gold);
 
       &:active,
       &:focus,
       &:hover {
-        border-bottom-color: color('gold');
+        border-bottom-color: color(gold);
       }
     }
   }
